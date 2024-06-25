@@ -1,0 +1,27 @@
+.quantity-container{
+  width: 100px;
+}
+.cartText{
+  color: rgb(234, 80, 13) !important;
+  font-weight: bold;
+
+}
+/* .no-cart{
+  background-image: url(https://cdn.dribbble.com/users/5107895/screenshots/14532312/media/a7e6c2e9333d0989e3a54c95dd8321d7.gif);
+  height:100vh !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+} */
+.cartheight{
+  /* height: calc(100vh); */
+  height: calc(100vh - 220px);
+
+}
+.product-img{
+  min-width: 100px;
+  max-width: 110px;
+  height: 150px !important;
+  object-fit: contain;
+}

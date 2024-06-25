@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <div class="row ">
+    <div class="col-6 d-flex gap-3 justify-content-center mx-auto">
+      <button mat-raised-button class="text-info" (click)="increment()">Increment</button>
+      <h4>Counter value</h4>
+      <h4 class="text-dark">{{count$ | async}}</h4>
+      <button mat-raised-button class="text-warning" (click)="reset()">Reset</button>
+      <button mat-raised-button class="text-warning" (click)="decrement()">Decrease</button>
+    </div>
+  </div>
+</div>

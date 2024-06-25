@@ -1,1 +1,121 @@
 /* You can add global styles to this file, and also import other style files */
+.active{
+  color: white !important;
+  background-color: blueviolet !important;
+}
+.btn-bg{
+  background-color: blueviolet !important;
+  color: white !important;
+}
+.btn-border{
+  border: 1px solid  blueviolet !important;
+}
+.btn-text{
+  color:blueviolet !important;
+}
+.anchor-tag{
+  text-decoration: none;
+  color: black;
+}
+.theme-text{
+  color:blueviolet !important;
+  font-style: italic;
+  text-decoration: underline;
+}
+.header-main-text{
+  color: rgba(20, 75, 72, 0.858);
+  font-style: italic;
+  text-decoration: underline;
+}
+.hoverOnProduct:hover{
+  transition: transform 0.9s ease;
+  transform: scale(1.05);
+  border: 2px solid rgb(75, 109, 108) !important;
+  box-shadow: 0 8px 16px rgb(75, 109, 108) !important;
+}
+.mat-expansion-panel-body{
+  padding: 10px 0px !important;
+}
+.loading-img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  animation: rotate 2s linear infinite;
+}
+.loading-text{
+  position: absolute;
+  top: 49%;
+  left: 52%;
+}
+@keyframes rotate {
+  0% {
+      transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  }
+  100% {
+      transform: translateX(-50%) translateY(-50%) rotate(360deg);
+  }
+}
+.OnProduct{
+  /* transition: transform 0.3s ease; */
+  /* transform: scale(1.08); */
+  border: 2px solid rgba(27, 43, 40, 0.855) !important;
+  box-shadow: 0 8px 16px rgba(52, 60, 58, 0.855) !important;
+}
+.productBody{
+  background-color: rgb(226, 226, 226);
+}
+.dark-mode{
+  background-color: black !important;
+  color: #fff !important;
+}
+.content-div{
+  min-height: calc(100vh - 140px);
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+}
+.table-section{
+  overflow-y: auto;
+}
+.logo-img{
+  min-width: 40px !important;
+  max-width: 70px !important;
+}
+@media ( max-width: 690px) {
+  .sidenav-text {
+    display: none !important;
+  }
+  .sidenav-show-text {
+    display: block !important;
+  }
+  .header-text{
+    font-size: small !important;
+  }
+  .small-text{
+    font-size: x-small !important;
+  }
+}
+@media (min-width: 690px) and (max-width: 5000px) {
+  .sidenav-show-text {
+    display: none !important;
+  }
+}
+.product{
+  transition: transform 0.3s ease-in-out;
+}
+.product:hover {
+  transform: scale(1.04); /* Scale the product by 10% */
+}
+
+h1, h2, h3, h4, h5, h6{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+@import "../node_modules/@syncfusion/ej2-base/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-navigations/styles/material.css";
+
+html, body { height: 100%;  }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

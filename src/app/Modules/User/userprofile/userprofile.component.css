@@ -1,0 +1,6 @@
+.container{
+  height: calc(100vh - 63px);
+}
+::placeholder {
+  color: black  ; /* Change this to the desired color */
+}

@@ -1,0 +1,15 @@
+.active{
+  background-color: rgb(234, 80, 13);
+  color: white !important;
+  font-weight: bold;
+}
+.header-main-text{
+  color: rgb(234, 80, 13);
+  font-style: italic;
+  text-decoration: underline;
+}
+.activeroute{
+  /* color: rgb(50, 131, 138); */
+  color: blueviolet !important;
+  font-weight: bold;
+}

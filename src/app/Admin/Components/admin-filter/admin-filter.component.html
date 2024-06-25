@@ -1,0 +1,46 @@
+<mat-accordion class="d-flex flex-column gap-2">
+  <mat-expansion-panel
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header class="btn-bg text-white">
+      <mat-panel-title class="text-white"> Category </mat-panel-title>
+      <mat-panel-description> </mat-panel-description>
+    </mat-expansion-panel-header>
+    <section class="d-flex flex-column gap-3 pt-2">
+      <div class="w-100 px-2">
+        <input class="w-100 rounded-1 p-2 search-box border-1 border-secondary" type="search" [(ngModel)]="searchText" (input)="onSearch(searchText)" placeholder="Search Category" />
+      </div>
+      <div class="expansion-panel px-2">
+  <ng-container *ngIf="filteredCategories.length>0 ; else noData">
+    <div
+    class="mt-2 border-bottom border-2 py-1"
+    type="button"
+    *ngFor="let category of filteredCategories"
+  >
+    <p>{{ category.categoryname }} < {{ category.parentcategory }}</p>
+  </div>
+  </ng-container>
+      </div>
+    </section>
+  </mat-expansion-panel>
+  <mat-expansion-panel
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header class="btn-bg text-white">
+      <mat-panel-title class="text-white"> Status </mat-panel-title>
+      <mat-panel-description> </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="expansion-panel px-2">
+      <h3 type="button" class="mt-2 border-bottom border-1 py-2"> Scheduled</h3>
+      <h3 type="button" class="border-bottom border-1 py-2"> Active</h3>
+      <h3 type="button" class="border-bottom border-1 py-2"> Inactive</h3>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+<ng-template #noData>
+  <h3 class="text-danger">
+  No data found !!
+  </h3>
+</ng-template>

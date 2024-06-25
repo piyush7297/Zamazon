@@ -1,0 +1,287 @@
+<div class="bg-secondary bg-opacity-10">
+  <div class="row m-0">
+    <div class="col-2 p-0">
+      <app-admin-sidenav></app-admin-sidenav>
+    </div>
+    <div class="col-10 p-0">
+      <app-admin-header [headertext]="'Products'"></app-admin-header>
+      <section
+        class="bg-white mt-lg-4 mt-md-4 mt-sm-4 mt-0 mb-0 mx-lg-4 mx-md-4 mx-sm-4 mx-0 rounded-3 content-div"
+      >
+        <div class="container-fluid py-3">
+          <form action="" [formGroup]="productform" (ngSubmit)="submitForm()">
+            <header class="row justify-content-between align-items-center">
+              <div class="col-5 d-flex gap-2 align-items-center">
+                <mat-icon class="">edit_square</mat-icon>
+                <h2 class="header-text">Edit Product</h2>
+              </div>
+              <div
+                class="col-7 d-flex align-items-center gap-3 justify-content-end"
+              >
+                <button
+                  routerLink="/admin/product"
+                  class="d-flex justify-content-center rounded-2 align-items-center btn-border border-2 btn-text small-text"
+                  mat-stroked-button
+                >
+                  <mat-icon>close</mat-icon> Cancel
+                </button>
+                <button
+                  type="submit"
+                  class="d-flex justify-content-center rounded-2 align-items-center btn-bg small-text"
+                  mat-stroked-button
+                >
+                  Update Product
+                </button>
+              </div>
+            </header>
+            <section
+              class="row justify-content-evenly px-4 mt-3 gap-lg-0 gap-md-3 gap-sm-3 gap-3"
+            >
+              <div
+                class="col-lg-8 bg-secondary bg-opacity-10 rounded-3 d-flex flex-column gap-2 py-3"
+              >
+                <h3>General Information</h3>
+                <!-- <h6>Product Name</h6> -->
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Product Name</mat-label>
+                  <input matInput formControlName="name" />
+                  <div
+                    *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+                    class="text-danger"
+                  >
+                    <div *ngIf="name?.errors?.required">
+                      This field is required.
+                    </div>
+                  </div>
+                </mat-form-field>
+                <!-- <h6>Product Description</h6> -->
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Product Description</mat-label>
+                  <input matInput formControlName="description" />
+                  <div
+                    *ngIf="
+                      description?.invalid &&
+                      (description?.dirty || description?.touched)
+                    "
+                    class="text-danger"
+                  >
+                    <div *ngIf="description?.errors?.required">
+                      This field is required.
+                    </div>
+                  </div>
+                </mat-form-field>
+                <div class="row gap-2 d-flex justify-content-between">
+                  <div class="col-lg-5 col-md-4 col-sm-12 col-12">
+                    <h4>Size</h4>
+                    <h6>Pick Available Size</h6>
+                    <mat-button-toggle-group
+                      name="ingredients"
+                      aria-label="Ingredients"
+                      multiple
+                      class="border-0"
+                    >
+                      <mat-button-toggle
+                        class="text-center rounded-2 size-btn"
+                        value="S"
+                        >S</mat-button-toggle
+                      >
+                      <mat-button-toggle
+                        class="text-center rounded-2 size-btn ms-2"
+                        value="M"
+                        >M</mat-button-toggle
+                      >
+                      <mat-button-toggle
+                        class="text-center rounded-2 size-btn ms-2"
+                        value="L"
+                        >L</mat-button-toggle
+                      >
+                      <mat-button-toggle
+                        class="text-center rounded-2 size-btn ms-2"
+                        value="L"
+                        >XL</mat-button-toggle
+                      >
+                      <mat-button-toggle
+                        class="text-center rounded-2 size-btn ms-2"
+                        value="L"
+                        >XXL</mat-button-toggle
+                      >
+                    </mat-button-toggle-group>
+                  </div>
+                  <!-- <div class="col-lg-5 col-md-5 col-sm-12 col-12">
+                    <h4>Gender</h4>
+                    <h6>Pick Gender</h6>
+                    <mat-radio-group aria-label="Select an option">
+                      <mat-radio-button class="" value="Male">Male</mat-radio-button>
+                      <mat-radio-button class="ps-3" value="Female">Female</mat-radio-button>
+                      <mat-radio-button class="ps-3" value="Unisex">Unisex</mat-radio-button>
+                    </mat-radio-group>
+                  </div> -->
+                </div>
+              </div>
+              <div class="col-lg-3 bg-secondary bg-opacity-10 rounded-3 py-3">
+                <h3>Upload Image</h3>
+                <div class="d-flex flex-column gap-3">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Image URL</mat-label>
+                    <input matInput formControlName="image" />
+                    <div
+                      *ngIf="image?.invalid && (image?.dirty || image?.touched)"
+                      class="text-danger"
+                    >
+                      <div *ngIf="image?.errors?.required">
+                        This field is required.
+                      </div>
+                    </div>
+                  </mat-form-field>
+                  <!-- <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Input</mat-label>
+                    <input  matInput formControlName="price">
+                  </mat-form-field> <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Input</mat-label>
+                    <input  matInput formControlName="price">
+                  </mat-form-field> <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Input</mat-label>
+                    <input  matInput formControlName="price">
+                  </mat-form-field> -->
+                </div>
+              </div>
+            </section>
+            <section
+              class="row justify-content-evenly px-4 mt-3 gap-lg-0 gap-md-3 gap-sm-3 gap-3"
+            >
+              <div
+                class="col-lg-8 bg-secondary bg-opacity-10 rounded-3 d-flex flex-column gap-2 py-3"
+              >
+                <h3>Pricing And Stock</h3>
+                <div class="row justify-content-between">
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-12">
+                    <h5>Base Pricing</h5>
+                    <!-- <input  type="text" placeholder="Price" class="px-3 py-2 bg-secondary bg-opacity-10 rounded-2 w-100 border-0"> -->
+                    <mat-form-field appearance="fill" class="w-100">
+                      <mat-label>Price</mat-label>
+                      <input matInput formControlName="price" />
+                      <div
+                        *ngIf="
+                          price?.invalid && (price?.dirty || price?.touched)
+                        "
+                        class="text-danger"
+                      >
+                        <div *ngIf="price?.errors?.required">
+                          This field is required.
+                        </div>
+                      </div>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-12">
+                    <h5>Stock</h5>
+                    <mat-form-field appearance="fill" class="w-100">
+                      <mat-label>Stock</mat-label>
+                      <input matInput formControlName="stock" />
+                      <div
+                        *ngIf="
+                          stock?.invalid && (stock?.dirty || stock?.touched)
+                        "
+                        class="text-danger"
+                      >
+                        <div *ngIf="stock?.errors?.required">
+                          This field is required.
+                        </div>
+                      </div>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row justify-content-between">
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-12">
+                    <h5>Discount</h5>
+                    <mat-form-field appearance="fill" class="w-100">
+                      <mat-label>Discount</mat-label>
+                      <input matInput formControlName="discount" />
+                      <div
+                        *ngIf="
+                          discount?.invalid &&
+                          (discount?.dirty || discount?.touched)
+                        "
+                        class="text-danger"
+                      >
+                        <div *ngIf="discount?.errors?.required">
+                          This field is required.
+                        </div>
+                      </div>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-12">
+                    <h5>Discount Type</h5>
+                    <mat-form-field appearance="fill" class="w-100">
+                      <mat-label>Discount Type *optional</mat-label>
+                      <input matInput />
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-lg-3 bg-secondary bg-opacity-10 rounded-3 py-3 d-flex flex-column gap-1"
+              >
+                <div class="d-flex flex-column">
+                  <h3 class="">Category</h3>
+                  <!-- <h5>Product Category</h5> -->
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Select Category</mat-label>
+                    <mat-select formControlName="category">
+                      <mat-option
+                        *ngFor="let category of categories"
+                        value="{{ category.categoryname }}"
+                        >{{ category.parentcategory }}-{{
+                          category.categoryname
+                        }}</mat-option
+                      >
+                    </mat-select>
+                    <div
+                      *ngIf="
+                        category?.invalid &&
+                        (category?.dirty || category?.touched)
+                      "
+                      class="text-danger"
+                    >
+                      <div *ngIf="category?.errors?.required">
+                        This field is required.
+                      </div>
+                    </div>
+                  </mat-form-field>
+                  <button
+                    mat-button
+                    (click)="openDialog()"
+                    class="d-flex align-items-center btn-bg"
+                    mat-stroked-button
+                  >
+                    <mat-icon>add</mat-icon> Add Category
+                  </button>
+                </div>
+                <div class="d-flex flex-column gap-1">
+                  <h3 class="">Status</h3>
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Select Status</mat-label>
+                    <mat-select formControlName="status">
+                      <mat-option value="Scheduled">Scheduled</mat-option>
+                      <mat-option value="Active">Active</mat-option>
+                      <mat-option value="Inactive">Inactive</mat-option>
+                    </mat-select>
+                    <div
+                      *ngIf="
+                        status?.invalid && (status?.dirty || status?.touched)
+                      "
+                      class="text-danger"
+                    >
+                      <div *ngIf="status?.errors?.required">
+                        This field is required.
+                      </div>
+                    </div>
+                  </mat-form-field>
+                </div>
+              </div>
+            </section>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container-fluid bg-white">
+  <div class="row py-3 align-items-center">
+    <div class="col-2">
+      <h2 class="m-0 header-text">{{ headertext }}</h2>
+    </div>
+    <div class="col-10 d-flex gap-3 align-items-center justify-content-end">
+      <div class="col-lg-5 col-md-5 col-sm-6 col-7">
+        <input
+          class="w-100 rounded-2 p-2 search-bar"
+          type="search"
+          [placeholder]="placeholder"
+          [(ngModel)]="searchValue"
+          (input)="onSearch(searchValue)"
+          name=""
+          id=""
+        />
+      </div>
+      <!-- <app-darkmode></app-darkmode> -->
+      <div class="">
+        <mat-icon matBadge="12" matBadgeColor="warn">notifications</mat-icon>
+      </div>
+      <div class="">
+        <mat-icon>account_circle</mat-icon>
+      </div>
+    </div>
+  </div>
+</div>

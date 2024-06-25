@@ -1,0 +1,102 @@
+<div class="bg-secondary bg-opacity-10">
+  <div class="row m-0">
+    <div class="col-2 p-0">
+      <app-admin-sidenav></app-admin-sidenav>
+    </div>
+    <div class="col-10 p-0">
+      <app-admin-header (searchItem)="onSearch($event)" [headertext]="'Category'" [placeholder]="'Search Categories...'"></app-admin-header>
+      <div
+        class="bg-white mt-lg-4 mt-md-4 mt-sm-4 mt-0 mb-0 mx-lg-4 mx-md-4 mx-sm-4 mx-0 rounded-3 content-div"
+      >
+        <section class="">
+          <app-admin-subheader
+            [maintext]="'Category'"
+            (newBtnEvent)="openDialog()"
+          ></app-admin-subheader>
+          <ng-container *ngIf="categories.length > 0; else noData">
+            <ng-container *ngIf="filteredCategories.length>0; else noFilteredData">
+              <section>
+                <table class="w-100 table-section">
+                  <thead
+                    class="border-bottom text-secondary bg-white table-header top-10 w-100"
+                  >
+                    <th class="p-2">
+                      <div class="d-flex align-items-center gap-1 small-text">
+                        Category Name<mat-icon>keyboard_arrow_down</mat-icon>
+                      </div>
+                    </th>
+                    <th class="p-2">
+                      <div class="d-flex align-items-center gap-1 small-text">
+                        Category Type<mat-icon>keyboard_arrow_down</mat-icon>
+                      </div>
+                    </th>
+                    <th class="p-2">
+                      <div class="d-flex align-items-center gap-1 small-text">
+                        Action<mat-icon>keyboard_arrow_down</mat-icon>
+                      </div>
+                    </th>
+                  </thead>
+                  <tbody>
+                    <tr
+                      class="border-bottom"
+                      *ngFor="let category of filteredCategories"
+                    >
+                      <td class="p-2 d-flex align-items-center gap-1 ps-3">
+                        <img
+                          class="img-fluid product-img border rounded-2"
+                          src="{{ category.categoryimage }}"
+                          alt=""
+                        />
+                        {{ category.categoryname }}
+                      </td>
+                      <td class="px-2 py-3">{{ category.parentcategory }}</td>
+                      <td class="px-2 py-3 d-flex gap-2">
+                        <span
+                          class="border-end border-2 px-1 text-danger"
+                          role="button"
+                          aria-label="Delete"
+                          (click)="removeCategory(category.id)"
+                          matTooltip="Delete"
+                          ><mat-icon>delete</mat-icon></span
+                        >
+                        <span
+                          class="btn-text"
+                          role="button"
+                          aria-label="Edit"
+                          (click)="updateCategory(category)"
+                          matTooltip="Edit"
+                          ><mat-icon>edit_square</mat-icon>
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+            </ng-container>
+          </ng-container>
+          <app-paginatorfooter
+            [sizeOption]="pageSizeOptions"
+            [size]="pageSize"
+            [itemlength]="categoryLength"
+            (onChangeevent)="onpageChange($event)"
+          ></app-paginatorfooter>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template class="pt-4" #noData>
+  <img
+    class="bg-white loading-img"
+    src="https://cdn.dribbble.com/users/1767850/screenshots/3566945/media/dc6f1d5349d6d3bd0b520e1c16f236da.gif?resize=400x0"
+    alt=""
+  />
+</ng-template>
+<ng-template class="pt-4 " #noFilteredData>
+  <!-- <img
+    class="bg-white loading-img"
+    src="https://cdn.dribbble.com/users/1767850/screenshots/3566945/media/dc6f1d5349d6d3bd0b520e1c16f236da.gif?resize=400x0"
+    alt=""
+  /> -->
+  <h3 class="text-danger p-3">No Category Found!!</h3>
+</ng-template>

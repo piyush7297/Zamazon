@@ -1,0 +1,9 @@
+.expansion-panel{
+  min-height: 0px;
+  max-height: 300px;
+  overflow: auto;
+}
+.search-box{
+  outline: none !important;
+}
+

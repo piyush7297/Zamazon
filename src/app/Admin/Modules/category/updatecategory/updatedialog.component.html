@@ -1,0 +1,61 @@
+<div class="container-fluid px-3 rounded-3">
+  <form action="" (ngSubmit)="submitForm()" [formGroup]="categoryform">
+  <header class="row justify-content-between align-items-center ">
+    <div class="col-12 d-flex gap-2 align-items-center px-0">
+      <mat-icon>edit_square</mat-icon>
+      <h2>Edit Category</h2>
+    </div>
+
+  </header>
+  <section class="row flex-column gap-3 mt-3 ">
+    <div class="col-12 bg-secondary bg-opacity-10 rounded-3 d-flex flex-column gap-1 py-3">
+      <h6>Category Name</h6>
+      <mat-form-field appearance="fill" class="w-100">
+        <mat-label>Name</mat-label>
+        <input  matInput formControlName="categoryname">
+        <div
+        *ngIf="categoryname?.invalid && (categoryname?.dirty || categoryname?.touched)"
+        class="text-danger"
+      >
+        <div *ngIf="categoryname?.errors?.required">This field is required.</div>
+      </div>
+      </mat-form-field>
+      <h6>Category Type</h6>
+      <mat-form-field appearance="fill" class="w-100">
+        <mat-label>Select Category</mat-label>
+        <mat-select formControlName="parentcategory">
+          <mat-option value="Self">Self*</mat-option>
+          <mat-option *ngFor="let category of allCategory" value="{{category.categoryname}}">{{category.categoryname}}</mat-option>
+        </mat-select>
+        <div
+        *ngIf="parentcategory?.invalid && (parentcategory?.dirty || parentcategory?.touched)"
+        class="text-danger"
+      >
+        <div *ngIf="parentcategory?.errors?.required">This field is required.</div>
+      </div>
+      </mat-form-field>
+    </div>
+    <div class="bg-secondary bg-opacity-10 rounded-3 py-3 d-flex flex-column gap-2">
+      <h3>Upload Image</h3>
+      <mat-form-field appearance="fill" class="w-100">
+        <mat-label>Image Url</mat-label>
+        <input  matInput formControlName="categoryimage">
+        <div
+        *ngIf="categoryimage?.invalid && (categoryimage?.dirty || categoryimage?.touched)"
+        class="text-danger"
+      >
+        <div *ngIf="categoryimage?.errors?.required">This field is required.</div>
+      </div>
+      </mat-form-field>
+    </div>
+    <div class="col-12 d-flex align-items-center gap-5 px-0">
+      <button (click)="closeDialog()" class="d-flex rounded-2 align-items-center justify-content-center btn-border border-2 btn-text " mat-stroked-button>
+        <mat-icon>close</mat-icon> Cancel
+      </button>
+      <button type="submit" (click)="updateCategory(categoryData.id)" class="d-flex rounded-2 align-items-center justify-content-center  btn-bg " mat-stroked-button>
+        Update Category
+      </button>
+      </div>
+  </section>
+</form>
+</div>

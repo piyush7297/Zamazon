@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="conatainer text-center">
+    <div class="row py-4 justify-content-between gap-lg-0 gap-md-0 gap-sm-2 gap-2">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-12 d-flex justify-content-lg-between justify-content-md-between justify-content-sm-around justify-content-start gap-lg-0 gap-md-0 gap-sm-2 gap-2">
+          <h2 class="d-flex align-items-center">Total Ammount <mat-icon>arrow_forward_ios</mat-icon></h2>
+          <h2>{{grandTotal}}$</h2>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-12 d-flex justify-content-lg-end justify-content-md-end justify-content-sm-between justify-content-between gap-3">
+          <button (click)="emitEvent($event)" mat-raised-button class="border-2 border-dark border text-danger rounded-3 col-lg-4 col-md-4 col-sm-5 col-5" >Empty Cart</button>
+          <button mat-raised-button class="btn-border btn-text border-2 shadow-lg px-3 rounded-3 col-lg-4 col-md-4 col-sm-5 col-5">Buy</button>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+
+.product-img{
+  /* max-width: 200px; */
+  min-height: 250px !important;
+  max-height: 250px !important;
+  object-fit: contain;
+}
+.product-div{
+  min-height: 436px !important;
+  max-height: 455px !important;
+}

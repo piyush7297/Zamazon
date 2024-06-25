@@ -1,0 +1,84 @@
+<div class="container-fluid pt-4 sub-header bg-white py-3 px-0">
+  <div
+    class="row justify-content-lg-end justify-content-md-evenly justify-content-sm-evenly justify-content-between gap-4"
+  >
+    <div class="col-lg-3 col-md-4 col-sm-7 col-7 px-0">
+      <input
+        type="search"
+        class="w-100 py-2 rounded-2 border-1 border-secondary px-2"
+        placeholder="Search Products"
+        (input)="onSearch(searchText)"
+        [(ngModel)]="searchText"
+      />
+    </div>
+    <div
+      class="col-lg-1 col-md-4 col-sm-3 col-3 d-flex px-0 justify-content-lg-start justify-content-md-end justify-content-sm-end"
+    >
+      <button
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"
+        class="d-flex align-items-center"
+        mat-stroked-button
+      >
+        <mat-icon class="btn-text">filter_alt</mat-icon> Filter
+      </button>
+      <div
+        class="offcanvas offcanvas-end pt-5 mt-2"
+        tabindex="-1"
+        id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel"
+      >
+        <div class="offcanvas-header">
+          <h2
+            id="offcanvasRightLabel"
+            class="d-flex align-items-center fw-bold"
+          >
+            <mat-icon class="btn-text">filter_alt</mat-icon> Filter
+          </h2>
+          <button
+            type="button"
+            class="btn-close text-reset btn-text"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="row flex-column gap-2">
+            <!-- <button mat-raised-button class="btn-text btn-border">Men</button> -->
+            <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+              <!-- This is the tree node template for leaf nodes -->
+              <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+                <!-- use a disabled button to provide padding for tree leaf -->
+                <button mat-icon-button disabled></button>
+                {{ node.name }}
+              </mat-tree-node>
+              <!-- This is the tree node template for expandable nodes -->
+              <mat-tree-node
+                *matTreeNodeDef="let node; when: hasChild"
+                matTreeNodePadding
+              >
+                <button
+                  mat-icon-button
+                  matTreeNodeToggle
+                  class="btn-text"
+                  [attr.aria-label]="'Toggle ' + node.name"
+                >
+                  <mat-icon class="mat-icon-rtl-mirror">
+                    {{
+                      treeControl.isExpanded(node)
+                        ? "expand_more"
+                        : "chevron_right"
+                    }}
+                  </mat-icon>
+                </button>
+                {{ node.name }}
+              </mat-tree-node>
+            </mat-tree>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

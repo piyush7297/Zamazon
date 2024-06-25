@@ -1,0 +1,10 @@
+<div class="w-100 position-sticky bottom-0">
+  <mat-paginator
+    [length]="itemlength"
+    [pageSize]="size"
+    [pageSizeOptions]="sizeOption"
+    (page)="emitEvent($event)"
+    aria-label="Select page"
+  >
+  </mat-paginator>
+</div>
