@@ -17,7 +17,7 @@ export class ProductdetailsComponent implements OnInit {
   productData: any;
   cartProducts: any[] = []
 
-  constructor(private product: ProductService, private cartservice: CartService, private activeroute: ActivatedRoute, private snackbar: MatSnackBar, private Store: Store<AppState>) { }
+  constructor(private product: ProductService, private cartservice: CartService, private activeroute: ActivatedRoute, private snackbar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getProductDetails()
@@ -62,7 +62,7 @@ export class ProductdetailsComponent implements OnInit {
         this.getCartProducts()
       })
     }
-    this.Store.dispatch(addToCart(this.productData))
+    // this.Store.dispatch(addToCart(this.productData))
     // fetch data
     // find data
     // exists then +1

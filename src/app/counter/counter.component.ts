@@ -12,24 +12,24 @@ import { AsyncPipe } from '@angular/common';
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent implements OnInit {
-  count$ : Observable<number>;
-
-  constructor(private store : Store<AppState>) {
-    this.count$ = this.store.select(selectCount)
+  // count$ : Observable<number>;
+  // private store : Store<AppState> paste this in the constructor
+  constructor() {
+    // this.count$ = this.store.select(selectCount)
    }
 
   ngOnInit(): void {
   }
 
-  increment(){
-    this.store.dispatch(increment())
-  }
-  decrement(){
-    this.store.dispatch(decrement())
-  }
-  reset(){
-    this.store.dispatch(reset())
-  }
+  // increment(){
+  //   this.store.dispatch(increment())
+  // }
+  // decrement(){
+  //   this.store.dispatch(decrement())
+  // }
+  // reset(){
+  //   this.store.dispatch(reset())
+  // }
 
 
 

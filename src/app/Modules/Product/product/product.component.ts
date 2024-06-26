@@ -1,5 +1,10 @@
 import { Component, DoCheck, OnChanges, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Select, Store } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { Product } from 'src/app/Admin/Store/Product/product';
+import { getProduct } from 'src/app/Admin/Store/Product/product.action';
+import { productState } from 'src/app/Admin/Store/Product/product.state';
 import { CartService } from 'src/app/Services/CartService/cart.service';
 import { ProductService } from 'src/app/Services/ProductsService/product.service';
 
@@ -9,19 +14,16 @@ import { ProductService } from 'src/app/Services/ProductsService/product.service
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit, OnChanges, DoCheck {
+export class ProductComponent implements OnInit {
   searchKey: string = '';
+  // @Select(productState.getProductState) products$!: Observable<Product[]>;
+  productLoaded : boolean = false;
   productsData: any[] = [];
   cartProducts: any[] = [];
   searchText: string = ''
   filteredProducts: any[] = []
-  constructor(private productService: ProductService, private cartService: CartService, private snackbar: MatSnackBar) {
+  constructor(private productService: ProductService, private cartService: CartService, private snackbar: MatSnackBar ,public store : Store) {
   }
-  ngDoCheck(): void {
-  }
-  ngOnChanges(): void {
-  }
-
   ngOnInit(): void {
     this.fetchData()
     this.getCartProducts()
@@ -29,19 +31,23 @@ export class ProductComponent implements OnInit, OnChanges, DoCheck {
     //   this.cartProducts = res
     //   console.log(this.cartProducts);
     // })
-  }
-  fetchData() {
-    this.productService.getProducts().subscribe((data: any) => {
-      this.productsData = data
-      this.filteredProducts = this.productsData
+    this.store.select(({products}) => products.products).subscribe((res) => {
+      if (res) {
+        this.productsData = res.data;
+        this.filteredProducts = this.productsData
+      }
     })
   }
-  // filterData(){
-  //   this.productService.search.subscribe((res:any)=>{
-  //     this.searchKey = res
-  //     })
-  //   this.getCartProducts()
-  // }
+  fetchData() {
+    this.store.select(({products})=> products.products).subscribe((res)=>{
+      if(res){
+        this.productLoaded = res.isLoaded
+      }
+    })
+    if(!this.productLoaded){
+      this.store.dispatch(new getProduct())
+    }
+  }
   onsearch(value: any) {
     this.searchText = value.replace(/\s/g, '');
     this.filterProducts()

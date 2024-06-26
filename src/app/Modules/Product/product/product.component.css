@@ -9,3 +9,11 @@
   min-height: 436px !important;
   max-height: 455px !important;
 }
+/* .product-div:hover .product-img{
+  transition: transform 0.1s ease-in-out;
+  transform: scale(0.96);
+} */
+.product-div:hover{
+  transition: transform 0.5s ease-in-out;
+  transform: translateY(-15px) scale(1.02);
+}

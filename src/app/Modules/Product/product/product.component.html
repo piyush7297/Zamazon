@@ -1,6 +1,6 @@
 
 <div class="container-fluid pt-5">
-  <app-subheader (searchEvent)="onsearch($event)"></app-subheader>
+  <app-subheader class="" (searchEvent)="onsearch($event)"></app-subheader>
   <ng-container *ngIf="productsData.length>0 ; else noData">
     <ng-container *ngIf="filteredProducts.length>0 ; else noFilteredData">
       <div class=" row pt-4 justify-content-lg-center justify-content-md-center  gap-lg-5 gap-md-4 gap-sm-0 gap-0 justify-content-sm-evenly justify-content-evenly gap-lg-0 gap-md-0 gap-sm-3 gap-3">

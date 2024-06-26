@@ -19,6 +19,7 @@ export class UpdateproductComponent implements OnInit {
   categories: any = []
   productId: any = this.activerroute.snapshot.paramMap.get('id')
   productData: any;
+  productImage : string = ''
 
   constructor(public dialog: MatDialog, public fb: FormBuilder, private activerroute: ActivatedRoute, private productservice: ProductserviceService, private categoryservice: CategoryserviceService, private router: Router, private snackbar: MatSnackBar) {
     this.productForm()

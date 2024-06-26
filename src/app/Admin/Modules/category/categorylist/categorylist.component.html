@@ -6,33 +6,34 @@
     <div class="col-10 p-0">
       <app-admin-header (searchItem)="onSearch($event)" [headertext]="'Category'" [placeholder]="'Search Categories...'"></app-admin-header>
       <div
-        class="bg-white mt-lg-4 mt-md-4 mt-sm-4 mt-0 mb-0 mx-lg-4 mx-md-4 mx-sm-4 mx-0 rounded-3 content-div"
+        class="bg-white mt-lg-4 mt-md-4 mt-sm-4 mt-0 mb-0 mx-lg-4 mx-md-4 mx-sm-4 mx-0 rounded-3 content-div d-flex flex-column
+        "
       >
-        <section class="">
+        <section class="h-100 overflow-auto d-flex flex-column flex-fill">
           <app-admin-subheader
             [maintext]="'Category'"
             (newBtnEvent)="openDialog()"
           ></app-admin-subheader>
           <ng-container *ngIf="categories.length > 0; else noData">
             <ng-container *ngIf="filteredCategories.length>0; else noFilteredData">
-              <section>
+              <section class="flex-fill overflow-auto">
                 <table class="w-100 table-section">
                   <thead
                     class="border-bottom text-secondary bg-white table-header top-10 w-100"
                   >
                     <th class="p-2">
                       <div class="d-flex align-items-center gap-1 small-text">
-                        Category Name<mat-icon>keyboard_arrow_down</mat-icon>
+                        Category
                       </div>
                     </th>
                     <th class="p-2">
                       <div class="d-flex align-items-center gap-1 small-text">
-                        Category Type<mat-icon>keyboard_arrow_down</mat-icon>
+                        Category Type
                       </div>
                     </th>
                     <th class="p-2">
                       <div class="d-flex align-items-center gap-1 small-text">
-                        Action<mat-icon>keyboard_arrow_down</mat-icon>
+                        Action
                       </div>
                     </th>
                   </thead>
@@ -41,7 +42,7 @@
                       class="border-bottom"
                       *ngFor="let category of filteredCategories"
                     >
-                      <td class="p-2 d-flex align-items-center gap-1 ps-3">
+                      <td class="p-2 d-flex align-items-center gap-3 ps-2">
                         <img
                           class="img-fluid product-img border rounded-2"
                           src="{{ category.categoryimage }}"
@@ -50,8 +51,9 @@
                         {{ category.categoryname }}
                       </td>
                       <td class="px-2 py-3">{{ category.parentcategory }}</td>
-                      <td class="px-2 py-3 d-flex gap-2">
-                        <span
+                      <td class=" py-3 ">
+                        <div class="d-flex gap-2">
+                          <span
                           class="border-end border-2 px-1 text-danger"
                           role="button"
                           aria-label="Delete"
@@ -67,6 +69,7 @@
                           matTooltip="Edit"
                           ><mat-icon>edit_square</mat-icon>
                         </span>
+                        </div>
                       </td>
                     </tr>
                   </tbody>

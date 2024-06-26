@@ -17,7 +17,7 @@ export class CartService {
   // public url = 'http://localhost:3000/cart'
   // public url = 'https://fakestoreapi.com/carts'
 
-  constructor( private http: HttpClient , private Store : Store<AppState>) { }
+  constructor( private http: HttpClient , ) { }
   // getcart = this.http.get(this.url)
   // addProducts(data : any):any
   // {

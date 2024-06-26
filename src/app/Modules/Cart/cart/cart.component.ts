@@ -16,12 +16,12 @@ export class CartComponent implements OnInit {
   grandTotal : number = 1
   // cartService = Inject(CartService)
 
-  constructor( private cart : CartService , private dialog : MatDialog , private store : Store<AppState>) {
+  constructor( private cart : CartService , private dialog : MatDialog ) {
 
    }
 
   ngOnInit(): void {
-    console.log(this.store.select(selectShoppingCartItems));
+    // console.log(this.store.select(selectShoppingCartItems));
     this.fetchData()
     this.cartProducts.map((p)=>{
       console.log(p.quantity);

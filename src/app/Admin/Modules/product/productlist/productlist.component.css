@@ -1,10 +1,10 @@
 .table-header{
   position: sticky;
-  top: 9.4%;
+  top: 0;
 }
 .product-img{
-  width: 30px;
-  height: 40px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
 }
 .product-name{

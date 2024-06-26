@@ -3,7 +3,6 @@ import { Product } from "./product";
 export class addProduct {
   static readonly type = '[Product] Add'
   constructor (public payload : Product) {
-
   }
 }
 

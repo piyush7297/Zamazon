@@ -19,6 +19,7 @@ import {NgxsLoggerPluginModule} from '@ngxs/logger-plugin'
 import { StoreModule } from '@ngrx/store';
 import { shoppingCartReducer } from './States/Cart/cart.reducer';
 import { counterReducer } from './States/Counter/counter.reducer';
+import { productState } from './Admin/Store/Product/product.state';
 
 @NgModule({
   declarations: [
@@ -37,10 +38,10 @@ import { counterReducer } from './States/Counter/counter.reducer';
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    NgxsModule.forRoot(),
+    NgxsModule.forRoot([productState]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot(),
-    StoreModule.forRoot({counter : counterReducer , shoppingCart : shoppingCartReducer}),
+    // StoreModule.forRoot({counter : counterReducer , shoppingCart : shoppingCartReducer}),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode

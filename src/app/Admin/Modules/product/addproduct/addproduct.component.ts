@@ -14,6 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AddproductComponent implements OnInit {
   categories: any = []
+  productImage : string = '';
 
   constructor(public dialog: MatDialog, public fb: FormBuilder, private productservice: ProductserviceService, private categoryservice: CategoryserviceService, private router: Router, private snackbar: MatSnackBar) {
     this.productForm()

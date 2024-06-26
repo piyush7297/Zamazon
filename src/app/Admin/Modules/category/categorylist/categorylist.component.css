@@ -1,9 +1,9 @@
 .table-header{
   position: sticky;
-  top: 9.4%;
+  top: 0;
 }
 .product-img{
-  width: 30px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
 }

@@ -10,9 +10,9 @@
         [placeholder]="'Search Products...'"
       ></app-admin-header>
       <div
-        class="bg-white mt-lg-4 mt-md-4 mt-sm-4 mt-0 mb-0 mx-lg-4 mx-md-4 mx-sm-4 mx-0 rounded-3 content-div"
+        class="bg-white mt-lg-4 mt-md-4 mt-sm-4 mt-0 mb-0 mx-lg-4 mx-md-4 mx-sm-4 mx-0 rounded-3 content-div d-flex flex-column "
       >
-        <section class="">
+        <section class="h-100 flex-fill d-flex flex-column overflow-auto">
           <app-admin-subheader
             [maintext]="'Product'"
             (newBtnEvent)="btnClick()"
@@ -21,44 +21,47 @@
             <ng-container
               *ngIf="filteredProducts.length > 0; else noFilteredData"
             >
-              <section>
+              <section class="flex-fill overflow-auto">
                 <table class="w-100 table-section">
                   <thead
                     class="border-bottom text-secondary bg-white table-header top-10 w-100"
                   >
+                  <th class="p-2 py-3">
+                    Product
+                  </th>
+                    <!-- <th class="p-2">
+                      <div class="d-flex align-items-center gap-1 small-text">
+                         Name <mat-icon>keyboard_arrow_down</mat-icon>
+                      </div>
+                    </th> -->
                     <th class="">
                       <div class="d-flex align-items-center gap-1 small-text">
-                        Products Name <mat-icon>keyboard_arrow_down</mat-icon>
+                        Category
                       </div>
                     </th>
                     <th class="">
                       <div class="d-flex align-items-center gap-1 small-text">
-                        Category <mat-icon>keyboard_arrow_down</mat-icon>
+                        Price
                       </div>
                     </th>
                     <th class="">
                       <div class="d-flex align-items-center gap-1 small-text">
-                        Price<mat-icon>keyboard_arrow_down</mat-icon>
+                        Discount
                       </div>
                     </th>
                     <th class="">
                       <div class="d-flex align-items-center gap-1 small-text">
-                        Discount<mat-icon>keyboard_arrow_down</mat-icon>
+                        Stock
                       </div>
                     </th>
                     <th class="">
                       <div class="d-flex align-items-center gap-1 small-text">
-                        Stock<mat-icon>keyboard_arrow_down</mat-icon>
+                        Status
                       </div>
                     </th>
                     <th class="">
                       <div class="d-flex align-items-center gap-1 small-text">
-                        Status<mat-icon>keyboard_arrow_down</mat-icon>
-                      </div>
-                    </th>
-                    <th class="">
-                      <div class="d-flex align-items-center gap-1 small-text">
-                        Action<mat-icon>keyboard_arrow_down</mat-icon>
+                        Action
                       </div>
                     </th>
                   </thead>
@@ -67,17 +70,17 @@
                       class="border-bottom"
                       *ngFor="let product of filteredProducts"
                     >
-                      <td class="p-2 d-flex align-items-center gap-1 ps-4">
+                    <td class="p-2">
+                      <div class="d-flex align-items-center gap-2">
                         <img
-                          class="product-img border rounded-2"
-                          src="{{ product.image }}"
-                          alt=""
-                        />
-                        <span class="text-truncate product-name border-0">
-                          {{ product.name }}</span
-                        >
-                      </td>
-                      <td class="py-3">{{ product.category }}</td>
+                        class="product-img border rounded-2"
+                        src="{{ product.image }}"
+                        alt=""
+                      />
+                      <span class="text-truncate product-name border-0 fw-bold">{{ product.name }}</span>
+                      </div>
+                    </td>
+                      <td class="py-3 ">{{ product.category }}</td>
                       <td class="py-3 fw-bold">${{ product.price }}</td>
                       <td class="py-3 fw-bold">{{ product.discount }}</td>
                       <td class="py-3">{{ product.stock }}</td>
@@ -89,7 +92,7 @@
                         </span>
                       </td>
                       <!-- <td role="button" class="px-2 py-3 active">Details</td> -->
-                      <td role="button" class="px-2 py-3">
+                      <td role="button" class=" py-3">
                         <div class="d-flex align-items-center gap-2">
                           <span
                             class="text-danger"
@@ -114,13 +117,15 @@
                 </table>
               </section>
             </ng-container>
-            <app-paginatorfooter
+            <footer class=" ">
+              <app-paginatorfooter
               [itemlength]="productLength"
               [size]="10"
               [sizeOption]="pageSizeOptions"
               [size]="pageSize"
               (onChangeevent)="onPageChange($event)"
             ></app-paginatorfooter>
+            </footer>
           </ng-container>
         </section>
       </div>
