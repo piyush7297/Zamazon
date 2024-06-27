@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddcategoryComponent } from '../addcategory/addcategory.component';
 import { CategoryserviceService } from 'src/app/Admin/Services/CategoryService/categoryservice.service';
-import { DeletedialogComponent } from 'src/app/Shared/Layout/Dialogs/deletedialog/deletedialog.component';
+import { DeletedialogComponent } from 'src/app/Public/Shared/Layout/Dialogs/deletedialog/deletedialog.component';
 import { UpdatedialogComponent } from 'src/app/Admin/Modules/category/updatecategory/updatedialog.component';
 import { PageEvent } from '@angular/material/paginator';
 

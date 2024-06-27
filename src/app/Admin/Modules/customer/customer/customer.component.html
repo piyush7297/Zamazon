@@ -6,7 +6,7 @@
     <div class="col-10 p-0">
       <app-admin-header
         (searchItem)="onSearch($event)"
-        [headertext]="'Category'"
+        [headertext]="'Customers'"
         [placeholder]="'Search Categories...'"
       ></app-admin-header>
       <div
@@ -14,8 +14,7 @@
       >
         <section class="h-100 overflow-auto d-flex flex-column flex-fill">
           <app-admin-subheader
-            [maintext]="'Category'"
-            (newBtnEvent)="openDialog()"
+            [maintext]="'Customer'"
           ></app-admin-subheader>
           <ng-container *ngIf="categories.length > 0; else noData">
             <ng-container
@@ -62,7 +61,6 @@
                             class="border-end border-2 px-1 text-danger"
                             role="button"
                             aria-label="Delete"
-                            (click)="removeCategory(category.id)"
                             matTooltip="Delete"
                             ><mat-icon>delete</mat-icon></span
                           >
@@ -70,7 +68,6 @@
                             class="btn-text"
                             role="button"
                             aria-label="Edit"
-                            (click)="updateCategory(category)"
                             matTooltip="Edit"
                             ><mat-icon>edit_square</mat-icon>
                           </span>
@@ -106,5 +103,5 @@
     src="https://cdn.dribbble.com/users/1767850/screenshots/3566945/media/dc6f1d5349d6d3bd0b520e1c16f236da.gif?resize=400x0"
     alt=""
   /> -->
-  <h3 class="text-danger p-3">No Category Found!!</h3>
+  <h3 class="text-danger p-3">No User Found!!</h3>
 </ng-template>

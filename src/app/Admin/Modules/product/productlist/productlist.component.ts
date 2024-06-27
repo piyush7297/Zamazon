@@ -3,8 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddproductComponent } from '../addproduct/addproduct.component';
 import { ProductserviceService } from 'src/app/Admin/Services/ProductService/productservice.service';
 import { Router } from '@angular/router';
-import { DeletedialogComponent } from 'src/app/Shared/Layout/Dialogs/deletedialog/deletedialog.component';
-import { ProductService } from 'src/app/Services/ProductsService/product.service';
+import { DeletedialogComponent } from 'src/app/Public/Shared/Layout/Dialogs/deletedialog/deletedialog.component';
+import { ProductService } from 'src/app/Public/Services/ProductsService/product.service';
 import { PageEvent } from '@angular/material/paginator';
 
 @Component({
