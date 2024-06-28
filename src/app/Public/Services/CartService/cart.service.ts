@@ -13,7 +13,7 @@ import { AppState } from 'src/app/Public/States/app.state';
 export class CartService {
   public cartProducts :any [] = [];
   public cartList = new BehaviorSubject<any>([])
-  public url = 'http://192.168.2.211:3000/cart'
+  public url = 'http://192.168.2.210:3000/cart'
   // public url = 'http://localhost:3000/cart'
   // public url = 'https://fakestoreapi.com/carts'
 

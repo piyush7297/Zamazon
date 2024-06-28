@@ -1,6 +1,6 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { CartService } from 'src/app/Public/Services/CartService/cart.service';
 import { ProductService } from 'src/app/Public/Services/ProductsService/product.service';
@@ -17,7 +17,7 @@ export class ProductdetailsComponent implements OnInit {
   productData: any;
   cartProducts: any[] = []
 
-  constructor(private product: ProductService, private cartservice: CartService, private activeroute: ActivatedRoute, private snackbar: MatSnackBar) { }
+  constructor(private product: ProductService, private cartservice: CartService, private activeroute: ActivatedRoute, private snackbar: MatSnackBar ,public router : Router) { }
 
   ngOnInit(): void {
     this.getProductDetails()
@@ -33,6 +33,9 @@ export class ProductdetailsComponent implements OnInit {
     this.cartservice.getItems().subscribe((res: any) => {
       this.cartProducts = res
     })
+  }
+  order(productId : string){
+    // this.router.navigate(['/order'])
   }
   addtoCart(productData: any) {
     this.cartservice.getItems().subscribe((res)=>{
@@ -62,6 +65,7 @@ export class ProductdetailsComponent implements OnInit {
         this.getCartProducts()
       })
     }
+ 
     // this.Store.dispatch(addToCart(this.productData))
     // fetch data
     // find data

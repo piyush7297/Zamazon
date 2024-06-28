@@ -8,7 +8,7 @@ import { ProductService } from 'src/app/Public/Services/ProductsService/product.
   providedIn: 'root'
 })
 export class ProductserviceService {
-  url = 'http://192.168.2.211:3000/products'
+  url = 'http://192.168.2.210:3000/products'
   // url = 'http://localhost:3000/products'
   constructor(private http : HttpClient ) { }
 

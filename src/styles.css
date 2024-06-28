@@ -16,6 +16,7 @@
 .anchor-tag{
   text-decoration: none;
   color: black;
+  /* color: rgba(255, 209, 6, 0.859); */
 }
 .theme-text{
   color:blueviolet !important;

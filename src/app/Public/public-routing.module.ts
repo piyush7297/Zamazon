@@ -26,6 +26,10 @@ const routes : Routes = [
         path : "profile",
         loadChildren : ()=>import('./Modules/User/user.module').then(m=> m.UserModule)
       },
+      {
+        path : "order/:id",
+        loadChildren : ()=>import('./Modules/order/order.module').then(m=> m.OrderModule)
+      },
     ]
   }
 ]

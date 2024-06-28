@@ -5,38 +5,35 @@
     </div>
     <div class="col-10 p-0 ">
       <app-admin-header [headertext]="'Dashboard'"></app-admin-header>
-      <div class="bg-white p-3 mt-lg-4 mt-md-4 mt-sm-4 mt-0 mb-0 mx-lg-4 mx-md-4 mx-sm-4 mx-0 rounded-3 content-div ">
+      <div class="bg-white p-3 mt-lg-4 mt-md-4 mt-sm-4 mt-0 mb-0 mx-lg-4 mx-md-4 mx-sm-4 mx-0 rounded-3 content-div d-flex flex-column">
         <!-- <app-productlist></app-productlist> -->
-        <div class="row align-items-center m-3 justify-content-evenly gap-lg-0 gap-md-3 gap-sm-3 gap-3 h-100">
-          <!-- <div class="col-lg-3 p-2 text-center">
-            <img class="product-img" src="https://img.freepik.com/free-photo/cyber-monday-shopping-sales_23-2148688506.jpg?t=st=1717763576~exp=1717767176~hmac=baa53ad57e77221335d8627a378f10de9bf1e79a2bddeb0c996b63aa2ab71059&w=740" alt="">
-            <h3>{{totalProducts}} Products</h3>
-          </div>
-          <div class="col-lg-3 p-2 text-center">
-            <img class="product-img" src="https://img.freepik.com/premium-vector/online-shopping-e-commerce-concept_53205-487.jpg?w=740" alt="">
-            <h3>{{totalcategories}} Categories</h3>
-          </div> -->
-          <a class="col-lg-2 colmd-3 col-sm-5 col-12 btn-bg p-3 d-flex flex-column gap-2 rounded-3 text-center text-decoration-none" routerLink="product">
-            <span><mat-icon>shopping_cart</mat-icon></span>
-            <h3>{{totalProducts}} Products</h3>
-          </a>
-          <a class="col-lg-2 colmd-3 col-sm-5 col-12 bg-secondary bg-opacity-25  p-3 d-flex flex-column gap-2 rounded-3 text-center text-decoration-none text-dark" routerLink="category">
-            <span><mat-icon>category</mat-icon></span>
-            <h3>{{totalcategories}} Categories</h3>
-          </a>
-          <div class="col-lg-2 colmd-3 col-sm-5 col-12 bg-info bg-opacity-25 p-3 d-flex flex-column gap-2 rounded-3 text-center">
-            <span><mat-icon>groups</mat-icon></span>
-            <h3>1205 Users</h3>
-          </div>
-          <div class="col-lg-2 colmd-3 col-sm-5 col-12 bg-success bg-opacity-25 p-3 d-flex flex-column gap-2 rounded-3 text-center">
-            <span><mat-icon>check_circle</mat-icon></span>
-            <h3>221 Orders Completed</h3>
-          </div>
-          <div class="col-lg-2 colmd-3 col-sm-5 col-12 bg-warning bg-opacity-50 p-3 d-flex flex-column gap-2 rounded-3 text-center">
-            <span><mat-icon>pending_actions</mat-icon></span>
-            <h3>105 Orders Pending</h3>
-          </div>
-        </div>
+        <section class="h-100 flex-fill d-flex flex-column overflow-auto">
+          <section class="row align-items-center m-3 justify-content-between gap-lg-0 gap-md-3 gap-sm-3 gap-3 h-100">
+            <a class="col-lg-2 colmd-3 col-sm-5 col-12 btn-bg p-3 d-flex flex-column gap-2 rounded-3 text-center text-decoration-none" routerLink="product">
+              <span><mat-icon>shopping_cart</mat-icon></span>
+              <h3>{{totalProducts}} Products</h3>
+            </a>
+            <a class="col-lg-2 colmd-3 col-sm-5 col-12 bg-secondary bg-opacity-25  p-3 d-flex flex-column gap-2 rounded-3 text-center text-decoration-none text-dark" routerLink="category">
+              <span><mat-icon>category</mat-icon></span>
+              <h3>{{totalcategories}} Categories</h3>
+            </a>
+            <div class="col-lg-2 colmd-3 col-sm-5 col-12 bg-info bg-opacity-25 p-3 d-flex flex-column gap-2 rounded-3 text-center">
+              <span><mat-icon>groups</mat-icon></span>
+              <h3>1205 Users</h3>
+            </div>
+            <div class="col-lg-2 colmd-3 col-sm-5 col-12 bg-success bg-opacity-25 p-3 d-flex flex-column gap-2 rounded-3 text-center">
+              <span><mat-icon>check_circle</mat-icon></span>
+              <h3>900 Orders Completed</h3>
+            </div>
+            <div class="col-lg-2 colmd-3 col-sm-5 col-12 bg-warning bg-opacity-50 p-3 d-flex flex-column gap-2 rounded-3 text-center">
+              <span><mat-icon>pending_actions</mat-icon></span>
+              <h3>105 Orders Pending</h3>
+            </div>
+          </section>
+          <section class="">
+            <app-chart></app-chart>
+          </section>
+        </section>
       </div>
     </div>
   </div>

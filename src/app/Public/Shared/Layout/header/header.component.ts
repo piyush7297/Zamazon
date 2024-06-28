@@ -1,4 +1,4 @@
-import { Component, OnInit   } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CartService } from 'src/app/Public/Services/CartService/cart.service';
 import { ProductService } from 'src/app/Public/Services/ProductsService/product.service';
 
@@ -8,17 +8,17 @@ import { ProductService } from 'src/app/Public/Services/ProductsService/product.
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  public searchTerm : string = "";
-  public cartItems : number = 0;
-  constructor( private productService : ProductService , private cart : CartService) { }
+  public searchTerm: string = "";
+  public cartItems: number = 0;
+  // @Input()cartItemsLength: number = 0;
+  constructor(private productService: ProductService, private cart: CartService) { }
 
   ngOnInit(): void {
-    this.cart.getItems().subscribe((res:any)=>{
+    this.cart.getItems().subscribe((res: any) => {
       this.cartItems = res.length
     })
   }
-  searchItem(event:any)
-  {
+  searchItem(event: any) {
     this.searchTerm = event.target.value;
     this.productService.search.next(this.searchTerm)
   }
