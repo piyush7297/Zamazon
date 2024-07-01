@@ -23,6 +23,10 @@ const routes : Routes = [
         loadChildren : ()=>import('./Modules/category/category.module').then(m => m.CategoryModule)
       },
       {
+        path : "sales",
+        loadChildren : ()=>import('./Modules/sales/sales.module').then(m => m.SalesModule)
+      },
+      {
         path : "settings",
         loadChildren : ()=>import('./Modules/settings/settings.module').then(m => m.SettingsModule)
       },

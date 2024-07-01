@@ -1,3 +1,8 @@
 .search-bar{
   outline: none !important;
 }
+.custom-menu {
+  transform: translateY(-20px); 
+  position: relative;
+  top: 20px;
+}

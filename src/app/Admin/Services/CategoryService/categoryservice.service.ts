@@ -8,6 +8,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class CategoryserviceService {
   // url = 'http://localhost:3000/product_category'
+  // url = 'http://192.168.2.212:3000/product_category'
   url = 'http://192.168.2.210:3000/product_category'
   constructor(private http : HttpClient) { }
 

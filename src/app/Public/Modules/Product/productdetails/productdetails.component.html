@@ -14,7 +14,7 @@
               />
             </div>
             <div class="row gap-lg-4 gap-md-2 gap-sm-3 gap-3 mt-2 ps-2">
-              <button class="btn-bg  col-lg-5 col-md-5 d-flex align-items-center justify-content-center" (click)="addtoCart(productData)" mat-raised-button>Add to Cart <mat-icon class="text-white">shopping_cart</mat-icon></button>
+              <button class="btn-bg p-2 col-lg-5 col-md-5 d-flex align-items-center justify-content-center" (click)="addtoCart(productData)" mat-raised-button>Add to Cart <mat-icon class="text-white">shopping_cart</mat-icon></button>
               <button class="btn-bg text-center bg-warning fw-bold p-2 rounded-2  col-lg-5 col-md-5 d-flex align-items-center justify-content-center text-dark" (click)="order(productId)" routerLink="/order/{{productId}}" mat-raised-button>But Now</button>
             </div>
           </div>
@@ -52,9 +52,35 @@
           </div>
         </div>
       </div>
-      <div class="row mt-4">
-        <h3 class="fw-bold fs-4">Related Products</h3>
-      </div>
     </div>
   </div>
+  <ng-container *ngIf="relatedProducts.length > 0">
+    <h3 class="fw-bold fs-4 mt-4">Related Products</h3>
+    <div class="py-2">
+      <!-- <h3 class="fs-4 fw-bold text-center bg-secondary bg-opacity-10 btn-text py-2">Top Products</h3> -->
+        <owl-carousel-o [options]="customOptions">
+          <ng-container *ngFor="let product of relatedProducts">
+            <ng-template carouselSlide [id]="product.id">
+              <div class="w-100 border rounded-2 border-2 slider" >
+                <figure class="m-0 bg-white">
+                  <img class=" product-img mx-auto" src="{{product.image}}" alt="">
+                </figure>
+                  <div class="d-flex justify-content-between align-items-center px-3 py-2 bg-secondary rounded-2 bg-opacity-10">
+                    <h2 class="text-center py-2  text-truncate w-50">{{product.name}}</h2>
+                    <a (click)="viewProduct(product.id)" role="button" class="text-decoration-none btn-text fw-bold border-2 rounded-2 btn-border p-2">
+                      view details
+                    </a>
+                  </div>
+                </div>
+                <!-- <div class="bg-warning">
+                <div class="slider-img">
+                  <img class=" product-img mx-auto" src="{{product.image}}" title="{{product.name}}"  >
+                </div>
+              </div> -->
+              <!-- <img class="img-fluid product-img" src="https://mobirise.com/extensions/commercem4/assets/images/gallery00.jpg" > -->
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+    </div>
+  </ng-container>
 </div>

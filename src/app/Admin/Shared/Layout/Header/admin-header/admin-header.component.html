@@ -20,7 +20,19 @@
         <mat-icon matBadge="12" matBadgeColor="warn">notifications</mat-icon>
       </div>
       <div class="">
-        <mat-icon>account_circle</mat-icon>
+        <mat-icon mat-button [matMenuTriggerFor]="beforeMenu"
+          >account_circle</mat-icon
+        >
+        <mat-menu #beforeMenu="matMenu" xPosition="before" yPosition="below" class="custom-menu">
+          <div class="d-flex align-items-center gap-1 btn-text" mat-menu-item>
+            <mat-icon class="m-0 btn-text">person</mat-icon>
+            Profile
+          </div>
+          <div class="d-flex align-items-center gap-1 btn-text" mat-menu-item>
+            <mat-icon class="m-0 btn-text">logout</mat-icon>
+            Logout
+          </div>
+        </mat-menu>
       </div>
     </div>
   </div>
