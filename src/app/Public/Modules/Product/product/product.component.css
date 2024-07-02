@@ -1,13 +1,13 @@
 
 .product-img{
   /* max-width: 200px; */
-  min-height: 250px !important;
-  max-height: 250px !important;
+  min-height: 250px ;
+  max-height: 250px;
   object-fit: contain;
 }
 .product-div{
-  min-height: 436px !important;
-  max-height: 455px !important;
+  min-height: 436px ;
+  max-height: 455px ;
 }
 /* .product-div:hover .product-img{
   transition: transform 0.1s ease-in-out;

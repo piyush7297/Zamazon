@@ -7,7 +7,7 @@
       <div class=" row pt-4 justify-content-lg-center justify-content-md-center  gap-lg-5 gap-md-4 gap-sm-0 gap-0 justify-content-sm-evenly justify-content-evenly gap-lg-0 gap-md-0 gap-sm-3 gap-3">
         <div class="col-lg-2 col-md-3 col-sm-5 col-5 rounded-3 p-0 m-0 border rounded-3 bg-secondary bg-opacity-10 position-relative product-div product" routerLink="/productdetail/{{ product.id }}" *ngFor="let product of filteredProducts" >
           <figure class="m-0 bg-white">
-            <img class="w-100 product-img" src="{{product.image}}" alt="">
+            <img class="w-100 product-img productImg-mobile" src="{{product.image}}" alt="">
           </figure>
           <div class="p-2 d-flex flex-column gap-2">
             <h3 class="fw-bold text-truncate">{{product.name}}</h3>

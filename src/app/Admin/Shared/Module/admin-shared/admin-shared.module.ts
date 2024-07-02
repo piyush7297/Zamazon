@@ -9,6 +9,8 @@ import { PaginatorfooterComponent } from 'src/app/Admin/Shared/Layout/Footer/pag
 import { RouterModule } from '@angular/router';
 import { DarkmodeComponent } from 'src/app/Public/Shared/Layout/Button/darkmode/darkmode.component';
 import { AdminFilterComponent } from 'src/app/Admin/Shared/Layout/admin-filter/admin-filter.component';
+import { ChartComponent } from 'src/app/Admin/Modules/dashboard/chart/chart.component';
+import { NgChartsConfiguration, NgChartsModule } from 'ng2-charts';
 
 
 
@@ -19,6 +21,7 @@ import { AdminFilterComponent } from 'src/app/Admin/Shared/Layout/admin-filter/a
     AdminSubheaderComponent,
     PaginatorfooterComponent,
     DarkmodeComponent,
+    ChartComponent,
     AdminFilterComponent
   ],
   imports: [
@@ -26,7 +29,8 @@ import { AdminFilterComponent } from 'src/app/Admin/Shared/Layout/admin-filter/a
     ReactiveFormsModule,
     MaterialModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    NgChartsModule,
   ],
   exports : [
     AdminHeaderComponent,
@@ -34,11 +38,15 @@ import { AdminFilterComponent } from 'src/app/Admin/Shared/Layout/admin-filter/a
     AdminSubheaderComponent,
     PaginatorfooterComponent,
     DarkmodeComponent,
+    ChartComponent,
     ReactiveFormsModule,
     MaterialModule,
     RouterModule,
     FormsModule,
     AdminFilterComponent
+  ],
+  providers : [
+    { provide: NgChartsConfiguration , useValue : {generateColors : false} }
   ]
 })
 export class SharedModule { }

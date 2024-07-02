@@ -4,13 +4,17 @@
       <app-admin-sidenav></app-admin-sidenav>
     </div>
     <div class="col-10 p-0">
-      <app-admin-header  [headertext]="'Products'"></app-admin-header>
+      <app-admin-header [headertext]="'Products'"></app-admin-header>
       <section
-        class="bg-white mt-lg-4 mt-md-4 mt-sm-4 mt-0 mb-0 mx-lg-4 mx-md-4 mx-sm-4 mx-0 rounded-3 content-div d-flex flex-column "
+        class="bg-white mt-lg-4 mt-md-4 mt-sm-4 mt-0 mb-0 mx-lg-4 mx-md-4 mx-sm-4 mx-0 rounded-3 content-div d-flex flex-column"
       >
-        <div class="container-fluid pb-2 overflow-auto d-flex flex-column flex-fill">
+        <div
+          class="container-fluid pb-2 overflow-auto d-flex flex-column flex-fill"
+        >
           <form action="" [formGroup]="productform" (ngSubmit)="submitForm()">
-            <header class="row justify-content-between align-items-center position-sticky py-3 z-1 bg-white top-0">
+            <header
+              class="row justify-content-between align-items-center position-sticky py-3 z-1 bg-white top-0"
+            >
               <div
                 class="col-5 px-lg-2 px-md-2 px-sm-2 px-0 d-flex gap-2 align-items-center"
               >
@@ -112,12 +116,18 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 bg-secondary bg-opacity-10 rounded-3 py-3 d-flex flex-column gap-2">
+              <div
+                class="col-lg-3 bg-secondary bg-opacity-10 rounded-3 py-3 d-flex flex-column gap-2"
+              >
                 <h3>Upload Image</h3>
                 <div class="d-flex flex-column gap-2 h-100">
                   <mat-form-field appearance="fill" class="w-100">
                     <mat-label>Image URL</mat-label>
-                    <input [(ngModel)]="productImage" matInput formControlName="image" />
+                    <input
+                      [(ngModel)]="productImage"
+                      matInput
+                      formControlName="image"
+                    />
                     <div
                       *ngIf="image?.invalid && (image?.dirty || image?.touched)"
                       class="text-danger"
@@ -127,9 +137,13 @@
                       </div>
                     </div>
                   </mat-form-field>
-                  <ng-container *ngIf="productImage !== ''; else noimage  ">
+                  <ng-container *ngIf="productImage !== ''; else noimage">
                     <div class="h-100">
-                      <img class="productImage" src="{{productImage}}" alt="">
+                      <img
+                        class="productImage"
+                        src="{{ productImage }}"
+                        alt=""
+                      />
                     </div>
                   </ng-container>
                 </div>
@@ -237,7 +251,7 @@
                     </div>
                   </mat-form-field>
                   <button
-                  type="button"
+                    type="button"
                     mat-button
                     (click)="openDialog()"
                     class="d-flex align-items-center btn-bg"
@@ -269,6 +283,12 @@
                 </div>
               </div>
             </section>
+            <!-- <section>
+              <div>
+                <input type="file" ng2FileSelect [uploader]="uploader" multiple />
+                <button (click)="uploader.uploadAll()">Upload all</button>
+              </div>
+            </section> -->
           </form>
         </div>
       </section>
@@ -276,5 +296,9 @@
   </div>
 </div>
 <ng-template #noimage class="h-100">
-  <img class="productImage p-5" src="https://i.pinimg.com/564x/a0/86/47/a08647cec486718eaf66a38d6f6f8784.jpg" alt="">
+  <img
+    class="productImage p-5"
+    src="https://i.pinimg.com/564x/a0/86/47/a08647cec486718eaf66a38d6f6f8784.jpg"
+    alt=""
+  />
 </ng-template>

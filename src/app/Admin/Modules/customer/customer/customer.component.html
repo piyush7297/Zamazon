@@ -16,23 +16,33 @@
           <app-admin-subheader
             [maintext]="'Customer'"
           ></app-admin-subheader>
-          <ng-container *ngIf="categories.length > 0; else noData">
+          <ng-container >
             <ng-container
-              *ngIf="filteredCategories.length > 0; else noFilteredData"
+             
             >
               <section class="flex-fill overflow-auto">
                 <table class="w-100 table-section">
                   <thead
-                    class="border-bottom text-secondary bg-white table-header top-10 w-100"
+                    class="border-bottom bg-white table-header top-10 w-100"
                   >
                     <th class="p-2">
                       <div class="d-flex align-items-center gap-1 small-text">
-                        Category
+                        User
                       </div>
                     </th>
                     <th class="p-2">
                       <div class="d-flex align-items-center gap-1 small-text">
-                        Category Type
+                        Phone
+                      </div>
+                    </th>
+                    <th class="p-2">
+                      <div class="d-flex align-items-center gap-1 small-text">
+                        Orders
+                      </div>
+                    </th>
+                    <th class="p-2">
+                      <div class="d-flex align-items-center gap-1 small-text">
+                        Logged in
                       </div>
                     </th>
                     <th class="p-2">
@@ -41,37 +51,29 @@
                       </div>
                     </th>
                   </thead>
-                  <tbody>
+                  <tbody class="text-secondary fw-bold">
                     <tr
                       class="border-bottom"
-                      *ngFor="let category of filteredCategories"
                     >
-                      <td class="p-2 d-flex align-items-center gap-3 ps-2">
+                      <td class="p-2 d-flex align-items-center gap-3 ps-2 customer-td">
                         <img
-                          class="img-fluid product-img border rounded-2"
-                          src="{{ category.categoryimage }}"
+                          class="img-fluid product-img border rounded-circle"
+                          src="https://img.freepik.com/premium-vector/brunette-man-avatar-portrait-young-guy-vector-illustration-face_217290-1035.jpg?w=740"
                           alt=""
                         />
-                        {{ category.categoryname }}
+                        Piyush
                       </td>
-                      <td class="px-2 py-3">{{ category.parentcategory }}</td>
-                      <td class="py-3">
-                        <div class="d-flex gap-2">
-                          <span
-                            class="border-end border-2 px-1 text-danger"
-                            role="button"
-                            aria-label="Delete"
-                            matTooltip="Delete"
-                            ><mat-icon>delete</mat-icon></span
-                          >
-                          <span
-                            class="btn-text"
-                            role="button"
-                            aria-label="Edit"
-                            matTooltip="Edit"
-                            ><mat-icon>edit_square</mat-icon>
-                          </span>
-                        </div>
+                      <td class="px-2 py-3">
+                        7297825537
+                      </td>
+                      <td class="px-2 py-3">
+                        84
+                      </td>
+                      <td class="px-2 py-3">
+                        25/02/2019
+                      </td>
+                      <td class="px-2">
+                        <mat-icon class="btn-text text-center">info</mat-icon>
                       </td>
                     </tr>
                   </tbody>

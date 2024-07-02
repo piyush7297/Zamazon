@@ -52,10 +52,16 @@ export class ProductdetailsComponent implements OnInit {
         items: 1
       },
       740: {
-        items: 2  
+        items: 2
       },
       940: {
         items: 3
+      },
+      1440: {
+        items: 3
+      },
+      2000 : {
+        items : 5,
       }
     },
   };
@@ -64,6 +70,7 @@ export class ProductdetailsComponent implements OnInit {
       this.productData = res;
       this.filterProducts(); // Call filterProducts only after productData is set
     });
+    window.scroll(0,0)
     this.getCartProducts();
   }
 
@@ -115,14 +122,14 @@ export class ProductdetailsComponent implements OnInit {
       }
     });
   }
-  viewProduct(productId : any){
+  viewProduct(productId: any) {
     this.router.navigate([`/productdetail/${productId}`])
-    window.scroll(0 , 0)
+    window.scroll(0, 0)
     this.productService.getSingleProduct(productId).subscribe((res: any) => {
       this.productData = res;
       console.log(res);
-      this.filterProducts(); 
+      this.filterProducts();
     });
-    
+
   }
 }

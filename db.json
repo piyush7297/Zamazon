@@ -346,60 +346,6 @@
   ],
   "cart": [
     {
-      "id": "9703",
-      "name": "NIKE Mens Air Max 270 Running Shoe",
-      "description": "AIR MAX 270-BLACK/WHITE-UNIVERSITY RED-ANTHRACITE-AH8050-022-6UK",
-      "price": 80,
-      "category": "Shoes",
-      "image": "https://m.media-amazon.com/images/I/71y4i4m5XtL._SY695_.jpg",
-      "quantity": 1,
-      "size": "",
-      "status": "Active",
-      "stock": "23",
-      "discount": "10%"
-    },
-    {
-      "id": "dc1f",
-      "name": "Nike Mens Jordan MVP Running",
-      "description": "JORDAN MVP-BLACK/UNIVERSITY RED-WHITE-DZ4475-061-10UK ",
-      "price": 89,
-      "category": "Shoes",
-      "image": "https://m.media-amazon.com/images/I/31+AitYinLL.jpg",
-      "quantity": 1,
-      "size": "",
-      "categorytype": "Men",
-      "status": "Active",
-      "stock": "23",
-      "discount": "10%",
-      "discounttype": ""
-    },
-    {
-      "id": "3cbc",
-      "name": "Nike Mens Jordan Max Aura 5 Running Shoes",
-      "description": "https://m.media-amazon.com/images/I/51LlMqatrQL._SY695_.jpg",
-      "price": 100,
-      "category": "Shoes",
-      "status": "Active",
-      "image": "https://m.media-amazon.com/images/I/51LlMqatrQL._SY695_.jpg",
-      "quantity": 1,
-      "size": "",
-      "stock": "21",
-      "discount": "N/A"
-    },
-    {
-      "id": "22a5",
-      "name": "Nike Unisex-Child Air Jordan 10 Retro Gs, White/Fire Red/Black/Neutral Grey, 5 Big Kid",
-      "description": "*SUPPORT, STABILITY AND HERITAGE LOOK.*The Air Jordan 4 Retro delivers lightweight cushioning with a sculpted midsole designed to provide stability. Its throwback details pays tribute to the 1989 original. Leather and synthetic upper delivers durability and support. Visible Air-Sole unit in the heel for impact cushioning.",
-      "price": 500,
-      "category": "Shoes",
-      "image": "https://m.media-amazon.com/images/I/71cF8o8l+SL._SX695_.jpg",
-      "quantity": 1,
-      "size": "",
-      "status": "Active",
-      "stock": "12",
-      "discount": "N/A"
-    },
-    {
       "id": "ba59",
       "name": "Puma Unisex-Adult Rs-x 3D Sneaker",
       "description": "Style Name:-Sneaker Model Name:-RS-X 3D Brand Color:-Black-Harbor Mist Material:-Textile Wipe with a clean dry cloth",
@@ -414,6 +360,12 @@
     }
   ],
   "product_category": [
+    {
+      "id": "a46d",
+      "categoryname": "Men",
+      "categoryimage": "https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?t=st=1719898008~exp=1719901608~hmac=b082835cb091d3dbb8ca107e48905db7a95d02cf9a0227a7c6124606cb07b731&w=740",
+      "parentcategory": "Self"
+    },
     {
       "id": "e7ac",
       "categoryname": "Woman",

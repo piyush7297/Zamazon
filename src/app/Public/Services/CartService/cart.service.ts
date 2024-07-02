@@ -15,7 +15,6 @@ export class CartService {
   public cartList = new BehaviorSubject<any>([])
   public url = 'http://192.168.2.210:3000/cart'
   // public url = 'http://localhost:3000/cart'
-  // public url = 'https://fakestoreapi.com/carts'
 
   constructor( private http: HttpClient , ) { }
   // getcart = this.http.get(this.url)
@@ -57,11 +56,6 @@ export class CartService {
   return this.http.get<any[]>(this.url)
   }
   removeCartItem(productId : any) : Observable<any> {
-  //  return this.productList.map((a:any , index:any)=>{
-  //     if(product.id === a.id){
-  //       this.productList.splice(index,1)
-  //     }
-  //   })
   return this.http.delete(`${this.url}/${productId}`)
   }
   // removeallItems(){

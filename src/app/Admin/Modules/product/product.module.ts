@@ -5,6 +5,7 @@ import { ProductlistComponent } from './productlist/productlist.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { UpdateproductComponent } from './updateproduct/updateproduct.component'
 import { SharedModule } from '../../Shared/Module/admin-shared/admin-shared.module';
+import { FileUploadModule } from 'ng2-file-upload';
 
 
 
@@ -30,7 +31,8 @@ import { SharedModule } from '../../Shared/Module/admin-shared/admin-shared.modu
         component : UpdateproductComponent
       }
     ]),
-    SharedModule
+    SharedModule,
+    FileUploadModule
   ]
 })
 export class ProductModule { }

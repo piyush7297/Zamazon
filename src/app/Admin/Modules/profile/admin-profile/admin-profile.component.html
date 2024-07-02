@@ -1,0 +1,212 @@
+<div class="bg-secondary bg-opacity-10">
+  <div class="row m-0">
+    <div class="col-2 p-0">
+      <app-admin-sidenav></app-admin-sidenav>
+    </div>
+    <div class="col-10 p-0">
+      <app-admin-header [headertext]="'Profile'"></app-admin-header>
+      <div
+        class="bg-white p-3 mt-lg-4 mt-md-4 mt-sm-4 mt-0 mb-0 mx-lg-4 mx-md-4 mx-sm-4 mx-0 rounded-3 content-div d-flex flex-column"
+      >
+        <!-- <app-productlist></app-productlist> -->
+        <section class="h-100 flex-fill d-flex flex-column overflow-auto">
+          <div class="row m-0 justify-content-between h-100">
+            <section class="col-lg-4 d-flex flex-column gap-3">
+              <div
+                class="bg-secondary rounded-3 bg-opacity-10 p-2 position-relative"
+              >
+                <span
+                  class="position-absolute top-0 end-0 p-3 btn-text"
+                  role="button"
+                >
+                  <mat-icon>edit_square</mat-icon>
+                </span>
+                <figure class="m-0 w-100 text-center">
+                  <img
+                    class="profile-img mx-auto rounded-circle"
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Maharaja_Gaj_Singh.jpg"
+                    alt=""
+                  />
+                  <!-- <img
+                  class="profile-img mx-auto rounded-circle"
+                  src="https://i.pinimg.com/736x/60/63/be/6063bec07bc997be7dd822bcf0d21c51.jpg
+                  "
+                  alt=""
+                /> -->
+                </figure>
+                <div class="d-flex flex-column gap-1 px-2">
+                  <h3 class="fw-bold fs-4">{{ name }}</h3>
+                  <h3 class="text-secondary fs-6">{{ companyName }}</h3>
+                  <div class="py-3">
+                    <span
+                      class="fw-bold fs-6 btn-text btn-border px-2 py-1 rounded-3 border-2"
+                      >Admin</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="bg-secondary bg-opacity-10 p-3 rounded-3">
+                <h3 class="fw-bold btn-text">
+                  Email : <span class="text-secondary">{{ email }}</span>
+                </h3>
+                <h3 class="fw-bold btn-text">
+                  Phone : <span class="text-secondary">{{ phone }}</span>
+                </h3>
+                <h3 class="fw-bold btn-text">
+                  Company :
+                  <span class="text-secondary"
+                    >{{ companyName }} pvt.limited</span
+                  >
+                </h3>
+                <h3 class="fw-bold btn-text">
+                  Address : <span class="text-secondary">{{ address }}</span>
+                </h3>
+              </div>
+            </section>
+            <section class="col-lg-8">
+              <div class="bg-secondary bg-opacity-10 rounded-3">
+                <form
+                  class="px-2 d-flex flex-column gap-2 py-3"
+                  [formGroup]="profileform"
+                >
+                  <h3 class="fw-bold btn-text">General Information</h3>
+                  <!-- <h6>Product Name</h6> -->
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Name</mat-label>
+                    <input [(ngModel)]="name" matInput formControlName="name" />
+                    <div
+                      *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+                      class="text-danger"
+                    >
+                      <div *ngIf="name?.errors?.required">
+                        This field is required.
+                      </div>
+                    </div>
+                  </mat-form-field>
+                  <!-- <h6>Product Description</h6> -->
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Email</mat-label>
+                    <input
+                      [(ngModel)]="email"
+                      matInput
+                      formControlName="email"
+                    />
+                    <div
+                      *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+                      class="text-danger"
+                    >
+                      <div *ngIf="email?.errors?.required">
+                        This field is required.
+                      </div>
+                    </div>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Phone</mat-label>
+                    <input
+                      [(ngModel)]="phone"
+                      matInput
+                      formControlName="phone"
+                    />
+                    <div
+                      *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)"
+                      class="text-danger"
+                    >
+                      <div *ngIf="phone?.errors?.required">
+                        This field is required.
+                      </div>
+                    </div>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Company</mat-label>
+                    <input
+                      [(ngModel)]="companyName"
+                      matInput
+                      formControlName="companyName"
+                    />
+                    <div
+                      *ngIf="
+                        companyName?.invalid &&
+                        (companyName?.dirty || companyName?.touched)
+                      "
+                      class="text-danger"
+                    >
+                      <div *ngIf="companyName?.errors?.required">
+                        This field is required.
+                      </div>
+                    </div>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Address</mat-label>
+                    <input
+                      [(ngModel)]="address"
+                      matInput
+                      formControlName="address"
+                    />
+                    <div
+                      *ngIf="
+                        address?.invalid && (address?.dirty || address?.touched)
+                      "
+                      class="text-danger"
+                    >
+                      <div *ngIf="address?.errors?.required">
+                        This field is required.
+                      </div>
+                    </div>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input
+                      matInput
+                      [type]="hide ? 'password' : 'text'"
+                      [(ngModel)]="password"
+                      formControlName="password"
+                    />
+                    <div
+                      *ngIf="
+                        password?.invalid &&
+                        (password?.dirty || password?.touched)
+                      "
+                      class="text-danger"
+                    >
+                      <div *ngIf="password?.errors?.required">
+                        This field is required.
+                      </div>
+                    </div>
+                    <button
+                      mat-icon-button
+                      matSuffix
+                      (click)="hide = !hide"
+                      [attr.aria-label]="'Hide password'"
+                      [attr.aria-pressed]="hide"
+                    >
+                      <mat-icon>{{
+                        hide ? "visibility_off" : "visibility"
+                      }}</mat-icon>
+                    </button>
+                  </mat-form-field>
+                  <div class="row gap-2 d-flex justify-content-between"></div>
+                </form>
+              </div>
+            </section>
+          </div>
+        </section>
+        <footer>
+          <div
+            class="bg-secondary bg-opacity-10 rounded-3 p-3 d-flex justify-content-between"
+          >
+            <div></div>
+            <div class="d-flex align-items-center gap-3">
+              <div class="d-flex gap-1">
+                <h5 class="fw-bold">Last Updated:</h5>
+                <span class="text-secondary">June 30, 2024</span>
+              </div>
+              <button mat-button class="bg-success bg-opacity-50">
+                Update
+              </button>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>

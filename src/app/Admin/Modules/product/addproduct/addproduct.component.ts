@@ -6,6 +6,7 @@ import { ProductserviceService } from 'src/app/Admin/Services/ProductService/pro
 import { Router } from '@angular/router';
 import { CategoryserviceService } from 'src/app/Admin/Services/CategoryService/categoryservice.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FileUploader } from 'ng2-file-upload';
 
 @Component({
   selector: 'app-addproduct',
@@ -15,7 +16,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class AddproductComponent implements OnInit {
   categories: any = []
   productImage : string = '';
-
+  public uploader: FileUploader = new FileUploader({
+    url: 'YOUR_UPLOAD_URL',
+    disableMultipart: false,
+    autoUpload: true,
+  });
   constructor(public dialog: MatDialog, public fb: FormBuilder, private productservice: ProductserviceService, private categoryservice: CategoryserviceService, private router: Router, private snackbar: MatSnackBar) {
     this.productForm()
   }

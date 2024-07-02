@@ -95,6 +95,20 @@
   .sidenav-text {
     display: none !important;
   }
+  .productImg-mobile{
+    max-height: 145px !important;
+    min-height: 145px !important;
+    object-fit: contain;
+  }
+  .product-div{
+    min-height: 335px !important;
+    max-height: 335px !important;
+  }
+  .profile-img{
+    min-width: 150px !important;
+    max-width: 200px !important;
+    object-fit: contain;
+  }
   .sidenav-show-text {
     display: block !important;
   }
