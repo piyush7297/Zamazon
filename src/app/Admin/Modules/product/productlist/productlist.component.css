@@ -1,5 +1,7 @@
 .table-header{
   position: sticky;
+  background-color: #0D4571 !important;
+  color: white !important;
   top: 0;
 }
 .product-img{

@@ -75,10 +75,10 @@
                     <mat-label>Name</mat-label>
                     <input [(ngModel)]="name" matInput formControlName="name" />
                     <div
-                      *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+                      *ngIf="Name?.invalid && (Name?.dirty || Name?.touched)"
                       class="text-danger"
                     >
-                      <div *ngIf="name?.errors?.required">
+                      <div *ngIf="Name?.errors?.required">
                         This field is required.
                       </div>
                     </div>
@@ -92,10 +92,10 @@
                       formControlName="email"
                     />
                     <div
-                      *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+                      *ngIf="Email?.invalid && (Email?.dirty || Email?.touched)"
                       class="text-danger"
                     >
-                      <div *ngIf="email?.errors?.required">
+                      <div *ngIf="Email?.errors?.required">
                         This field is required.
                       </div>
                     </div>

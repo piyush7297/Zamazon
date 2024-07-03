@@ -33,10 +33,10 @@ export class AdminProfileComponent implements OnInit {
       password: ["", [Validators.required]],
     })
   }
-  getName() {
+  get Name() {
     return this.profileform.get('name')
   }
-  getEmail() {
+  get Email() {
     return this.profileform.get('email')
   }
 }

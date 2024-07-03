@@ -17,6 +17,7 @@ import {NgxsReduxDevtoolsPluginModule}from '@ngxs/devtools-plugin'
 import {NgxsLoggerPluginModule} from '@ngxs/logger-plugin'
 import { productState } from './Admin/Store/Product/product.state';
 import { PublicComponent } from './Public/public.component';
+import { categoryState } from './Admin/Store/Category/category.state';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { PublicComponent } from './Public/public.component';
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    NgxsModule.forRoot([productState]),
+    NgxsModule.forRoot([productState , categoryState]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot(),
     // StoreModule.forRoot({counter : counterReducer , shoppingCart : shoppingCartReducer}),

@@ -2,17 +2,17 @@
 
 .active-nav{
   color: white !important;
-  background-color: blueviolet !important;
+  background-color: #0D4571 !important;
 }
 .btn-bg{
-  background-color: blueviolet !important;
+  background-color: #0D4571 !important;
   color: white !important;
 }
 .btn-border{
-  border: 1px solid  blueviolet !important;
+  border: 1px solid  #0D4571 !important;
 }
 .btn-text{
-  color:blueviolet !important;
+  color:#0D4571 !important;
 }
 .anchor-tag{
   text-decoration: none;
@@ -20,7 +20,7 @@
   /* color: rgba(255, 209, 6, 0.859); */
 }
 .theme-text{
-  color:blueviolet !important;
+  color:#0D4571 !important;
   font-style: italic;
   text-decoration: underline;
 }

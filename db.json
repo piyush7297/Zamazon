@@ -344,21 +344,7 @@
       "discount": "N/A"
     }
   ],
-  "cart": [
-    {
-      "id": "ba59",
-      "name": "Puma Unisex-Adult Rs-x 3D Sneaker",
-      "description": "Style Name:-Sneaker Model Name:-RS-X 3D Brand Color:-Black-Harbor Mist Material:-Textile Wipe with a clean dry cloth",
-      "price": 100,
-      "category": "Shoes",
-      "image": "https://m.media-amazon.com/images/I/61zoifMTKcL._SY695_.jpg",
-      "quantity": 1,
-      "size": "",
-      "status": "Active",
-      "stock": "12",
-      "discount": "N/A"
-    }
-  ],
+  "cart": [],
   "product_category": [
     {
       "id": "a46d",

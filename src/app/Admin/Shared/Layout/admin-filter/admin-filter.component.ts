@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryserviceService } from '../../../Services/CategoryService/categoryservice.service';
 import { ProductserviceService } from '../../../Services/ProductService/productservice.service';
+import { Store } from '@ngxs/store';
+import { getCategory } from 'src/app/Admin/Store/Category/category.action';
 
 @Component({
   selector: 'app-admin-filter',
@@ -12,16 +14,27 @@ export class AdminFilterComponent implements OnInit {
   categories : any[] = [];
   filteredCategories : any[] = []
   searchText : string = ''
+  categoriesLoaded : boolean = false
 
-  constructor(private categoryService : CategoryserviceService , private ProductService : ProductserviceService) { }
+  constructor(private categoryService : CategoryserviceService , private ProductService : ProductserviceService ,private store : Store ) { }
   ngOnInit(): void {
     this.getCategories()
   }
-  getCategories(){
-    this.categoryService.getCategory().subscribe((res : any) => {
-      this.categories = res
-      this.filteredCategories = res
+  getCategories() {
+    this.store.select(({categories}) => categories.categories).subscribe((res) => {
+      if(res){
+        this.categories = res.data
+        this.filteredCategories = this.categories
+      }
     })
+    this.store.select(({categories}) => categories.categories).subscribe((res) => {
+      if(res){
+        this.categoriesLoaded = res.isLoaded
+      }
+    })
+    if(!this.categoriesLoaded){
+      this.store.dispatch(new getCategory() )
+    }
   }
   closeOffCanvas(){
 

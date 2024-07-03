@@ -6,7 +6,7 @@ import { tap } from "rxjs/operators";
 import { Injectable } from "@angular/core";
 
 export class productModel{
-  products!: {
+  products !: {
     data: Product[],
     isLoaded: boolean,
   }

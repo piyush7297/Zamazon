@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { DeletedialogComponent } from 'src/app/Public/Shared/Layout/Dialogs/deletedialog/deletedialog.component';
 import { ProductService } from 'src/app/Public/Services/ProductsService/product.service';
 import { PageEvent } from '@angular/material/paginator';
+import { Store } from '@ngxs/store';
+import { getProduct } from 'src/app/Admin/Store/Product/product.action';
 
 @Component({
   selector: 'app-productlist',
@@ -19,13 +21,14 @@ export class ProductlistComponent implements OnInit {
   productLength: number = 0
   pageSize: number = 10;
   currentPage: number = 0;
-  searchText: string = ''
+  searchText: string = '';
+  productLoaded : boolean = false;
 
 
   ngOnInit(): void {
     this.getProducts()
   }
-  constructor(public dialog: MatDialog, private productService: ProductserviceService, private router: Router, private webproductService: ProductService) { }
+  constructor(public dialog: MatDialog, private productService: ProductserviceService, private router: Router, private webproductService: ProductService , private store : Store) { }
 
   openDialog() {
     const dialogRef = this.dialog.open(AddproductComponent);
@@ -39,13 +42,22 @@ export class ProductlistComponent implements OnInit {
     this.router.navigate(['admin/product/add'])
   }
   getProducts() {
-    this.productService.getProducts().subscribe((res: any) => {
-      this.allProducts = res
-      this.filteredProducts = this.allProducts
-      this.productLength = this.filteredProducts.length
-      console.log(res);
-      this.filterProducts()
+    this.store.select(({products}) => products.products).subscribe((res) => {
+      if (res) {
+        this.allProducts = res.data;
+        this.filteredProducts = this.allProducts
+        this.productLength = this.filteredProducts.length
+        this.filterProducts()
+      }
     })
+    this.store.select(({products})=> products.products).subscribe((res)=>{
+      if(res){
+        this.productLoaded = res.isLoaded
+      }
+    })
+    if(!this.productLoaded){
+      this.store.dispatch(new getProduct())
+    }
   }
   onPageChange(event: PageEvent) {
     this.pageSize = event.pageSize;
@@ -78,7 +90,7 @@ export class ProductlistComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result.result) {
         this.productService.removeProduct(productId).subscribe((res: any) => {
-          this.getProducts()
+          this.store.dispatch(new getProduct())
         })
       }
       else {

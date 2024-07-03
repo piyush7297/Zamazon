@@ -8,6 +8,8 @@ import { CategoryserviceService } from 'src/app/Admin/Services/CategoryService/c
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AddcategoryComponent } from '../../category/addcategory/addcategory.component';
+import { Store } from '@ngxs/store';
+import { getProduct } from 'src/app/Admin/Store/Product/product.action';
 
 @Component({
   selector: 'app-updateproduct',
@@ -21,7 +23,7 @@ export class UpdateproductComponent implements OnInit {
   productData: any;
   productImage : string = ''
 
-  constructor(public dialog: MatDialog, public fb: FormBuilder, private activerroute: ActivatedRoute, private productservice: ProductserviceService, private categoryservice: CategoryserviceService, private router: Router, private snackbar: MatSnackBar) {
+  constructor(public dialog: MatDialog, public fb: FormBuilder, private activerroute: ActivatedRoute, private productservice: ProductserviceService, private categoryservice: CategoryserviceService, private router: Router, private snackbar: MatSnackBar , private store : Store) {
     this.productForm()
   }
 
@@ -53,6 +55,7 @@ export class UpdateproductComponent implements OnInit {
     if (this.productform.valid) {
       this.productservice.updateProduct(this.productId, this.productform.value).subscribe((res: any) => {
         console.log(res);
+        this.store.dispatch(new getProduct())
       })
       this.snackbar.open('Product Updated Successfully', '', {
         duration: 2000,
@@ -60,7 +63,6 @@ export class UpdateproductComponent implements OnInit {
         verticalPosition: 'top',
       });
       this.router.navigate(['/admin/product'])
-      this.productservice.getProducts().subscribe()
     }
     else {
       this.productform.markAllAsTouched()

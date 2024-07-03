@@ -27,18 +27,14 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     this.fetchData()
     this.getCartProducts()
-    // this.cartService.getItems().subscribe((res: any) => {
-    //   this.cartProducts = res
-    //   console.log(this.cartProducts);
-    // })
+  }
+  fetchData() {
     this.store.select(({products}) => products.products).subscribe((res) => {
       if (res) {
         this.productsData = res.data;
         this.filteredProducts = this.productsData
       }
     })
-  }
-  fetchData() {
     this.store.select(({products})=> products.products).subscribe((res)=>{
       if(res){
         this.productLoaded = res.isLoaded

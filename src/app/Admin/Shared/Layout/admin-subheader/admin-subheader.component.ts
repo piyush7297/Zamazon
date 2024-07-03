@@ -13,7 +13,7 @@ export class AdminSubheaderComponent implements OnInit {
   @Output() newBtnEvent = new EventEmitter<any>();
 
 
-  constructor(public dialog : MatDialog , private categoryservice : CategoryserviceService) {
+  constructor(public dialog : MatDialog ,) {
   }
 
   ngOnInit(): void {

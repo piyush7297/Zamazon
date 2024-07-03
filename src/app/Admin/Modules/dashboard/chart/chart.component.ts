@@ -24,7 +24,7 @@ export class ChartComponent {
     labels: this.doughnutChartLabels,
     datasets: [
       { data: [350, 450, 100] , 
-        backgroundColor: ['rgb(251,224,157)', 'blueviolet', 'rgb(201,226,215)'],
+        backgroundColor: ['rgb(251,224,157)', '#0D4571', 'rgb(201,226,215)'],
         hoverBackgroundColor: ['darkblue', 'black', 'rgba(255, 209, 6, 0.881)'],
        },
       { data: [50, 150, 120]  ,
@@ -32,7 +32,7 @@ export class ChartComponent {
         hoverBackgroundColor: ['gray', 'rgba(255, 209, 6, 0.881)', 'darkblue'],
        },
       { data: [250, 130, 70] ,
-        backgroundColor: ['blueviolet', 'rgb(201,226,215)', 'rgb(204,242,252)'],
+        backgroundColor: ['#0D4571', 'rgb(201,226,215)', 'rgb(204,242,252)'],
         hoverBackgroundColor: ['gray', 'rgba(255, 209, 6, 0.881)', 'darkblue'],
        },
     ],
@@ -74,7 +74,7 @@ export class ChartComponent {
     datasets: [
       {  data: [65, 229, 380, 581, 766, 905, 1205],
         label: 'Users',
-        backgroundColor: 'blueviolet',
+        backgroundColor: '#0D4571',
         hoverBackgroundColor:'rgb(220,223,224)',
         borderColor: 'black',
         borderWidth: 1,
