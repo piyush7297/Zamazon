@@ -9,3 +9,26 @@
   height: 80px;
   object-fit: cover;
 }
+::ng-deep .mat-paginator .mat-paginator-range-label {
+  color: #0D4571;
+}
+
+/* ::ng-deep .mat-paginator .mat-paginator-icon {
+  color: #00796b;
+} */
+
+::ng-deep .mat-paginator .mat-select-value-text {
+  color: #0D4571;
+}
+
+::ng-deep .mat-paginator .mat-paginator-page-size-label {
+  color: #0D4571;
+}
+
+::ng-deep .mat-paginator .mat-form-field .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-infix {
+  color: #0D4571;
+}
+
+::ng-deep .mat-paginator .mat-button {
+  color: #0D4571;
+}

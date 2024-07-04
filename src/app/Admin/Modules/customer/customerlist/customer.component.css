@@ -5,17 +5,13 @@
   top: 0;
 }
 .product-img{
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
 }
-.product-name{
-  max-width: 250px !important;
+.customer-td{
+  width: 170px;
 }
-::ng-deep .mat-paginator {
-  /* background-color: #0D4571 !important; */
-}
-
 ::ng-deep .mat-paginator .mat-paginator-range-label {
   color: #0D4571;
 }

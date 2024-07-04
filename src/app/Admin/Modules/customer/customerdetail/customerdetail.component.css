@@ -1,0 +1,22 @@
+
+.product-img{
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+.customer-font{
+  font-size: 12px;
+}
+.customer-font-1{
+  font-size: 14px;
+  line-height: 20px;
+}
+.customer-mat-icon{
+  font-size: 20px;
+}
+@media (min-width: 1000px) and (max-width: 5000px) {
+  .customer-info{
+    width: 900px;
+    height: 430px;
+  }
+}

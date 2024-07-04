@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
+import { CustomerdetailComponent } from '../customerdetail/customerdetail.component';
 
 @Component({
   selector: 'app-customer',
@@ -16,7 +18,7 @@ export class CustomerComponent implements OnInit {
   currentPage: number = 0
   searchText: string = ''
 
-  constructor() {
+  constructor(private dialog : MatDialog) {
   }
 
   ngOnInit(): void {
@@ -47,5 +49,12 @@ export class CustomerComponent implements OnInit {
       );
       this.categoryLength = this.filteredCategories.length
     }
+  }
+  infoDialog() {
+    const dialogRef = this.dialog.open(CustomerdetailComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }

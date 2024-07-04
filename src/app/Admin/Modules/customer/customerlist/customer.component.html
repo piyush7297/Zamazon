@@ -7,7 +7,7 @@
       <app-admin-header
         (searchItem)="onSearch($event)"
         [headertext]="'Customers'"
-        [placeholder]="'Search Categories...'"
+        [placeholder]="'Search Customers...'"
       ></app-admin-header>
       <div
         class="bg-white mt-lg-4 mt-md-4 mt-sm-4 mt-0 mb-0 mx-lg-4 mx-md-4 mx-sm-4 mx-0 rounded-3 content-div d-flex flex-column"
@@ -67,15 +67,43 @@
                         7297825537
                       </td>
                       <td class="px-2 py-3">
-                        84
+                        632
                       </td>
                       <td class="px-2 py-3">
                         25/02/2019
                       </td>
                       <td class="px-2">
+                        <span (click)="infoDialog()" role="button">
                         <mat-icon class="btn-text text-center">info</mat-icon>
+                        </span>
                       </td>
                     </tr>
+                    <tr
+                    class="border-bottom"
+                  >
+                    <td class="p-2 d-flex align-items-center gap-3 ps-2 customer-td">
+                      <img
+                        class="img-fluid product-img border rounded-circle"
+                        src="https://img.freepik.com/premium-vector/brunette-man-avatar-portrait-young-guy-vector-illustration-face_217290-1035.jpg?w=740"
+                        alt=""
+                      />
+                      Davidputra
+                    </td>
+                    <td class="px-2 py-3">
+                      7297345537
+                    </td>
+                    <td class="px-2 py-3">
+                      62
+                    </td>
+                    <td class="px-2 py-3">
+                      15/12/2021
+                    </td>
+                    <td class="px-2">
+                      <span (click)="infoDialog()" role="button">
+                      <mat-icon class="btn-text text-center">info</mat-icon>
+                      </span>
+                    </td>
+                  </tr>
                   </tbody>
                 </table>
               </section>

@@ -344,7 +344,36 @@
       "discount": "N/A"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "9703",
+      "name": "NIKE Mens Air Max 270 Running Shoe",
+      "description": "AIR MAX 270-BLACK/WHITE-UNIVERSITY RED-ANTHRACITE-AH8050-022-6UK",
+      "price": 80,
+      "category": "Shoes",
+      "image": "https://m.media-amazon.com/images/I/71y4i4m5XtL._SY695_.jpg",
+      "quantity": 1,
+      "size": "",
+      "status": "Active",
+      "stock": "23",
+      "discount": "10%"
+    },
+    {
+      "id": "dc1f",
+      "name": "Nike Mens Jordan MVP Running",
+      "description": "JORDAN MVP-BLACK/UNIVERSITY RED-WHITE-DZ4475-061-10UK ",
+      "price": 89,
+      "category": "Shoes",
+      "image": "https://m.media-amazon.com/images/I/31+AitYinLL.jpg",
+      "quantity": 1,
+      "size": "",
+      "categorytype": "Men",
+      "status": "Active",
+      "stock": "23",
+      "discount": "10%",
+      "discounttype": ""
+    }
+  ],
   "product_category": [
     {
       "id": "a46d",

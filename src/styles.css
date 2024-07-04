@@ -91,6 +91,7 @@
   min-width: 40px !important;
   max-width: 70px !important;
 }
+
 @media ( max-width: 690px) {
   .sidenav-text {
     display: none !important;
