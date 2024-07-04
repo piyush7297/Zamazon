@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-header',
@@ -13,12 +14,14 @@ export class AdminHeaderComponent implements OnInit {
 
  searchValue : string = ''
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
   }
   onSearch(term : any){
     this.searchItem.emit(term)
   }
-
+  logout(){
+    this.router.navigate(['/admin/login'])
+  }
 }

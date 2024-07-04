@@ -14,7 +14,7 @@
           name=""
           id=""
           />
-          <mat-icon class="position-absolute start-0 pt-2">search</mat-icon>
+          <mat-icon class="position-absolute start-0 pt-2 btn-text">search</mat-icon>
       </div>
       <!-- <app-darkmode></app-darkmode> -->
       <div class="">
@@ -29,7 +29,7 @@
             <mat-icon class="m-0 btn-text">person</mat-icon>
             Profile
           </div>
-          <div class="d-flex align-items-center gap-1 btn-text" mat-menu-item>
+          <div class="d-flex align-items-center gap-1 btn-text" (click)="logout()" mat-menu-item>
             <mat-icon class="m-0 btn-text">logout</mat-icon>
             Logout
           </div>

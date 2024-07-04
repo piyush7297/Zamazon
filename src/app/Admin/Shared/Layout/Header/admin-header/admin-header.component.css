@@ -10,3 +10,6 @@
   /* background-color: #0D4571; */
   background-color: white;
 }
+::placeholder{
+  color: #0D4571;
+}

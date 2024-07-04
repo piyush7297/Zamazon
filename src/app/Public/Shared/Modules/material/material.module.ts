@@ -19,6 +19,7 @@ import { MatPaginatorModule} from '@angular/material/paginator';
 import { MatExpansionModule} from '@angular/material/expansion';
 import { MatBadgeModule} from '@angular/material/badge';
 import { MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card'
 
 
 const MaterialComponents : any [] = [
@@ -41,7 +42,7 @@ const MaterialComponents : any [] = [
   MatExpansionModule,
   MatMenuModule,
   MatBadgeModule,
-  
+  MatCardModule,
 ]
 
 
