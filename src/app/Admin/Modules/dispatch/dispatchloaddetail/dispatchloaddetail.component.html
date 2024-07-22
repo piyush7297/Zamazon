@@ -1,0 +1,299 @@
+<header>
+  <h3 class="fw-bold fs-4 btn-text shadow py-3 px-2">Dispatch-MVP</h3>
+</header>
+<section class="container-fluid p-0">
+  <section class="load-detail-head px-5 py-3 w-100">
+    <section class="d-flex justify-content-between align-items-center">
+      <div>
+        <span>Load / Load Details</span>
+        <h2 class="fs-4 fw-bold">#6364735467</h2>
+      </div>
+      <div class="d-flex gap-3 align-items-center">
+        <button
+          mat-button
+          class="border border-2 border-danger text-danger px-4 py-1 fw-bold rounded-2"
+        >
+          CANCEL
+        </button>
+        <button
+          mat-button
+          class="theme-border theme-text-color border border-2 px-5 py-1 rounded-2"
+        >
+          SAVE AS DRAFT
+        </button>
+        <button mat-button class="theme-btn px-5 py-1 rounded-2">
+          CREATE LOAD
+        </button>
+      </div>
+    </section>
+    <section class="row pt-3">
+      <div
+        class="pe-3 col-lg-6 col-md-6 col-sm-12 col-12 border-end border-dark"
+      >
+        <span class="fw-bold">$ Transactions</span>
+        <div class="d-flex col-12 pt-1 gap-3">
+          <div class="border px-2 py-2 bg-white rounded-2 col load-card">
+            <h3 class="text-secondary load-card-header-text">Total invoice</h3>
+            <h2 class="fw-bold">$5,545.00</h2>
+          </div>
+          <div class="border px-2 py-2 bg-white rounded-2 col load-card">
+            <h3 class="text-secondary load-card-header-text">Total invoice</h3>
+            <h2 class="fw-bold text-success">$5,545.00</h2>
+          </div>
+          <div class="border px-2 py-2 bg-white rounded-2 col load-card">
+            <h3 class="text-secondary load-card-header-text">Total invoice</h3>
+            <h2 class="fw-bold text-danger">$5,545.00</h2>
+          </div>
+        </div>
+      </div>
+      <div class="ps-3 col-lg-6 col-md-6 col-sm-12 col-12">
+        <span class="fw-bold d-flex align-items-center"
+          ><mat-icon>local_shipping</mat-icon> Logistics</span
+        >
+        <div class="d-flex pt-1 gap-3">
+          <div class="border px-2 py-2 bg-white rounded-2 col load-card">
+            <h3 class="text-secondary load-card-header-text">Locations</h3>
+            <h2 class="fw-bold">5</h2>
+          </div>
+          <div class="border px-2 py-2 bg-white rounded-2 col load-card">
+            <h3 class="text-secondary load-card-header-text">freights</h3>
+            <h2 class="fw-bold">10</h2>
+          </div>
+          <div class="border px-2 py-2 bg-white rounded-2 col load-card">
+            <h3 class="text-secondary load-card-header-text">Picked up</h3>
+            <h2 class="fw-bold">8</h2>
+          </div>
+          <div class="border px-2 py-2 bg-white rounded-2 col load-card">
+            <h3 class="text-secondary load-card-header-text">Delivered</h3>
+            <h2 class="fw-bold">2</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <section class="d-flex justify-content-around px-5 border">
+    <div class="col fw-bold fs-6 py-3 btn-text text-center">Basic Details</div>
+    <div class="col fw-bold fs-6 py-3 text-center theme-btn">
+      Freight & Charges
+    </div>
+    <div class="col fw-bold fs-6 py-3 btn-text text-center">Dispatch</div>
+    <div class="col fw-bold fs-6 py-3 btn-text text-center">Invoice</div>
+    <div class="col fw-bold fs-6 py-3 btn-text text-center">Documents</div>
+    <div class="col fw-bold fs-6 py-3 btn-text text-center">Payments</div>
+    <div class="col fw-bold fs-6 py-3 btn-text text-center">BOLs</div>
+  </section>
+  <section class="py-3 px-5">
+    <div class="d-flex justify-content-between">
+      <h3 class="fw-bold fs-5">Freights</h3>
+      <button mat-button class="theme-btn px-1 fs-6 rounded-2">Add</button>
+    </div>
+    <section class="w-100 overflow-auto pt-3">
+      <table class="table">
+        <thead class="btn-bg">
+          <th class="py-3 px-2 text-start ps-3 load-td">FREIGHT</th>
+          <th class="py-3 px-2 text-start customer-td">PICK UP</th>
+          <th class="py-3 ps-4 text-start customer-td">DROP</th>
+          <th class="py-3 ps-4 text-start td">WEIGHT</th>
+          <th class="py-3 ps-4 text-start td">DIMENSIONS</th>
+          <th class="py-3 ps-4 text-start td">QTY.</th>
+          <th class="py-3 ps-4 text-start td">FC</th>
+          <th class="py-3 ps-4 text-start td">DECLARED VALUE</th>
+          <th class="py-3 px-2 text-start action-td ps-4">ACTION</th>
+        </thead>
+        <tbody>
+          <tr class="border border-1">
+            <td class="py-4 text-start ps-3">
+              <div class="text-info fw-bold">FRT 1001</div>
+              <span
+                class="d-inline-block py-1 text-white bg-primary rounded-2 px-2"
+                >To Be Picked Up</span
+              >
+            </td>
+            <td class="py-4 text-start">
+              <span class="d-block fw-bold">Mary Smith</span>
+              <span class="text-truncate"
+                >124,Grandvioew Avenue , Grandale , California 94226 , USA</span
+              >
+            </td>
+            <td class="py-4 ps-4 text-start">
+              <span class="d-block fw-bold">Mary Smith</span>
+              <span class="text-truncate"
+                >124,Grandvioew Avenue , Grandale , California 94226 , USA</span
+              >
+            </td>
+            <td class="py-4 ps-4 text-start">$1,276.34</td>
+            <td class="py-4 ps-4 text-start">$1,276.34</td>
+            <td class="py-4 ps-4 text-start">$1,276.34</td>
+            <td class="py-4 ps-4 text-start">$0.00</td>
+            <td class="py-4 ps-4 text-start">$1,276.34</td>
+            <td class="py-4 text-start ps-4">
+              <div class="d-flex gap-3">
+                <mat-icon class="text-info action-icon">edit_square</mat-icon>
+                <mat-icon class="text-info action-icon">file_copy</mat-icon>
+                <mat-icon class="text-danger action-icon">delete</mat-icon>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+  <section class="px-5 py-3 row m-0">
+    <div class="col-lg-6 pe-4 border-end border-2">
+      <h3 class="fw-bold fs-5 pb-2">Freights Charges</h3>
+      <section class="w-100 overflow-auto">
+        <table class="table">
+          <thead class="btn-bg">
+            <th class="py-3 px-2 text-start fee-td ps-3">Fee Method</th>
+            <th class="py-3 px-2 text-start rate-td">Rate</th>
+            <th class="py-3 px-2 text-center amount-td pe-3">Amount</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-4 text-start load-td border-0">
+                <mat-form-field class="w-100">
+                  <mat-label>Hauling Fee</mat-label>
+                  <mat-select>
+                    <mat-option value="Scheduled">Select</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td class="py-4 text-start border-0">
+                <mat-form-field class="w-100">
+                  <mat-label>Amount</mat-label>
+                  <input matInput value="0.00$" />
+                </mat-form-field>
+              </td>
+              <td class="py-4 text-center fw-bold border-0">$0.00</td>
+            </tr>
+            <tr>
+              <td class="py-4 text-start load-td border-0">
+                <mat-form-field class="w-100">
+                  <mat-label>Hauling Fee</mat-label>
+                  <mat-select>
+                    <mat-option value="Scheduled">Select</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td class="py-4 text-start border-0">
+                <mat-form-field class="w-100">
+                  <mat-label>Amount</mat-label>
+                  <input matInput value="0.00$" />
+                </mat-form-field>
+              </td>
+              <td class="py-4 text-center fw-bold border-0">$0.00</td>
+            </tr>
+            <tr>
+              <td class="py-4 text-start load-td border-0">
+                <mat-form-field class="w-100">
+                  <mat-label>Hauling Fee</mat-label>
+                  <mat-select>
+                    <mat-option value="Scheduled">Select</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td class="py-4 text-start border-0">
+                <mat-form-field class="w-100">
+                  <mat-label>Amount</mat-label>
+                  <input matInput value="0.00$" />
+                </mat-form-field>
+              </td>
+              <td class="py-4 text-center fw-bold border-0">$0.00</td>
+            </tr>
+            <tr>
+              <td colspan="3" class="border-0">
+                <div
+                  mat-button
+                  class="w-100 text-center fs-6 py-2 theme-border border border-1 theme-text-color px-4 rounded-2"
+                >
+                  + ADD ACCESSORIAL FEE
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-4 text-start load-td border-0">
+                <mat-form-field class="w-100">
+                  <mat-label>Hauling Fee</mat-label>
+                  <mat-select>
+                    <mat-option value="Scheduled">Select</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td class="py-4 text-start border-0">
+                <mat-form-field class="w-100">
+                  <mat-label>Amount</mat-label>
+                  <input matInput value="0.00$" />
+                </mat-form-field>
+              </td>
+              <td class="py-4 text-center fw-bold border-0">$0.00</td>
+            </tr>
+            <tr>
+              <td colspan="3" class="border-0">
+                <div
+                  mat-button
+                  class="w-100 text-center fs-6 py-2 theme-border border border-1 theme-text-color px-4 rounded-2"
+                >
+                  + ADD ACCESSORIAL FEE
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+    <div class="col-lg-3 pt-4">
+      <section class="pt-2 ps-3">
+        <table class="table">
+          <thead class="btn-bg">
+            <th class="py-3 px-2 text-start rounded-top-2 ps-3">Distance</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-4 text-start load-td">
+                <div class="text-secondary">Total Miles</div>
+                <div class="fw-bold">0 Miles</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table">
+          <thead class="btn-bg">
+            <th class="py-3 px-2 text-start fee-td ps-3">Calculation</th>
+            <th class="py-3 px-2 text-start amount-td ps-3"></th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="pt-3 text-start load-td border-0 ps-4">Sub Total</td>
+              <td class="pt-3 fw-bold fs-6 text-start load-td border-0">
+                $0.00
+              </td>
+            </tr>
+            <tr>
+              <td class="py-2 text-start load-td border-0 ps-4">
+                <button
+                  mat-button
+                  class="theme-text-color border border-1 text-center rounded-2 theme-border"
+                >
+                  + ADD DISCOUNT
+                </button>
+              </td>
+              <td class="py-2 fw-bold fs-6 text-start load-td border-0">
+                $0.00
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" class="border-0">
+                <div
+                  class="d-flex px-4 justify-content-between bg-secondary bg-opacity-10 py-3"
+                >
+                  <div>Total Amount</div>
+                  <div class="theme-text-color fs-5 pe-2">$0.00</div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </section>
+</section>

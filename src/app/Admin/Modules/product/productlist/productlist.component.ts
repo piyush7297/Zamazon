@@ -8,6 +8,8 @@ import { ProductService } from 'src/app/Public/Services/ProductsService/product.
 import { PageEvent } from '@angular/material/paginator';
 import { Store } from '@ngxs/store';
 import { getProduct } from 'src/app/Admin/Store/Product/product.action';
+import { ProductdetailComponent } from '../productdetail/productdetail.component';
+import { Product } from 'src/app/Admin/Store/Product/product';
 
 @Component({
   selector: 'app-productlist',
@@ -96,6 +98,14 @@ export class ProductlistComponent implements OnInit {
       else {
         console.log('Result False');
       }
+    });
+  }
+  infoDialog(productData : any) {
+    const dialogRef = this.dialog.open(ProductdetailComponent, {
+      data : productData
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
     });
   }
 }

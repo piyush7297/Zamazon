@@ -1,0 +1,55 @@
+.load-detail-head{
+  background-color: #00000008;
+}
+.theme-btn{
+  background-color: #01AAE4;
+  color: white;
+}
+.theme-border {
+  border-color: #01AAE4 !important;
+}
+.load-card{
+  /* max-width: 200px; */
+}
+.load-card-header-text{
+  font-size: 13px;
+  font-weight: bold;
+}
+.theme-text-color{
+  color: #01AAE4 !important;
+}
+.search-bar{
+  outline: none !important;
+}
+.status-text {
+  background-color: rgba(0, 123, 255, 0.1); /* Adjust the color and opacity as needed */
+  padding: 2px; /* Adjust padding as needed */
+}
+.action-icon{
+  font-size: 20px;
+}
+.load-td{
+  width: 10%;
+  border-radius: 10px 0 0 0;
+}
+.customer-td{
+  width: 15%;
+}
+.td{
+  width: 10%;
+}
+.action-td{
+  width: 15%;
+  border-radius: 0 10px 0 0;
+}
+.fee-td{
+  width: 40%;
+  border-radius: 10px 0 0 0;
+}
+.rate-td{
+  width: 40%;
+}
+.amount-td{
+  width: 10%;
+  border-radius: 0 10px 0 0;
+}

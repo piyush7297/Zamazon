@@ -1,0 +1,41 @@
+.theme-btn{
+  background-color: #01AAE4;
+  color: white;
+}
+.theme-border {
+  border-color: #01AAE4 !important;
+}
+.theme-text-color{
+  color: #01AAE4 !important;
+  font-size: 30px;
+}
+.search-bar{
+  outline: none !important;
+}
+.status-text {
+  background-color: rgba(0, 123, 255, 0.1); /* Adjust the color and opacity as needed */
+  padding: 2px; /* Adjust padding as needed */
+}
+.action-icon{
+  font-size: 20px;
+}
+.load-td{
+  width: 15%;
+  border-radius: 10px 0 0 0;
+}
+.customer-td{
+  width: 35%;
+}
+.load-type-td{
+  width: 10%;
+}
+.total-td{
+  width: 15%;
+}
+.balance-td{
+  width: 10%;
+}
+.action-td{
+  width: 15%;
+  border-radius: 0 10px 0 0;
+}

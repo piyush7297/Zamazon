@@ -18,6 +18,11 @@ export class LoginComponent implements OnInit {
 
   login() : void {
     if(this.username == 'admin' && this.password == 'admin'){
+      this.snackbar.open('Logged in successfully', '', {
+        duration: 2000,
+        horizontalPosition: 'end',
+        verticalPosition: 'top',
+      });
      this.router.navigate(["/admin"]);
     }else {
       this.snackbar.open('invalid username or password', '', {

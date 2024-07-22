@@ -4,13 +4,15 @@ import { CustomerComponent } from './customerlist/customer.component';
 import { SharedModule } from '../../Shared/Module/admin-shared/admin-shared.module';
 import { RouterModule } from '@angular/router';
 import { CustomerdetailComponent } from './customerdetail/customerdetail.component';
+import { AddcustomerComponent } from './addcustomer/addcustomer.component';
 
 
 
 @NgModule({
   declarations: [
     CustomerComponent,
-    CustomerdetailComponent
+    CustomerdetailComponent,
+    AddcustomerComponent
   ],
   imports: [
     CommonModule,

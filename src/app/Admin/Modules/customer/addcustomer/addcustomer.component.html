@@ -1,0 +1,23 @@
+<div class="customer-info d-flex flex-column gap-2">
+  <header>
+    <div
+      class="d-flex justify-content-between align-items-center border-bottom border-2 border-secondary pb-3"
+    >
+      <h2 class="btn-text fw-bold fs-4">Add Customer</h2>
+      <span (click)="closeDialog()" role="button"
+        ><mat-icon class="text-secondary fw-bold">close</mat-icon></span
+      >
+    </div>
+  </header>
+  <section>
+    <h3>Customer Type</h3>
+    <form action="">
+      <mat-radio-group aria-label="Select an option" class="d-flex gap-2" >
+        <mat-radio-button [checked]="checked" value="customer">Customer</mat-radio-button>
+        <mat-radio-button value="customer">Carrier</mat-radio-button>
+        <mat-radio-button value="broker">Broker</mat-radio-button>
+      </mat-radio-group>
+    </form>
+  </section>
+</div>
+n

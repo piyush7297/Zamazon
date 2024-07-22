@@ -1,0 +1,121 @@
+<header>
+  <h3 class="fw-bold fs-4 btn-text shadow py-3 px-2">Dispatch-MVP</h3>
+</header>
+<div class="container-fluid mt-4 bg-white d-flex flex-column gap-4">
+  <section class="row justify-content-between px-1 gap-lg-0 gap-md-0 gap-sm-0 gap-3">
+    <div class="col-lg-6 col-md-6 col-sm-8 col-11 d-flex justify-content-start gap-3 align-items-center">
+      <h3 class="fw-bold fs-5">Loads</h3>
+      <div class="w-100 d-flex gap-2 align-items-center">
+        <div class="position-relative col-lg-6 col-md-8 col-sm-12 col-12">
+          <input
+            class="search-bar w-100 border-bottom border-2 border-0 p-2 pe-4 search-bar"
+            type="search"
+            placeholder="Search Loads"
+            name=""
+            id=""
+          />
+          <mat-icon class="position-absolute end-0 pt-2 theme-text-color"
+            >search</mat-icon
+          >
+        </div>
+        <mat-icon class="theme-text-color">filter_list</mat-icon>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-4 col-12 d-flex gap-3 justify-content-end">
+      <button mat-button class="theme-btn px-4 py-1 fs-5 rounded-2">Create</button>
+      <button mat-button class="theme-border border border-2">
+        <mat-icon>autorenew</mat-icon>
+      </button>
+    </div>
+  </section>
+  <section class="w-100 overflow-auto">
+    <table class="table table-striped">
+      <thead class="btn-bg">
+        <th class="py-3 px-2 text-start ps-3 load-td">LOAD #</th>
+        <th class="py-3 px-2 text-start customer-td">CUSTOMER DETAILS</th>
+        <th class="py-3 px-2 text-start load-type-td border-end border-white">
+          LOAD TYPE
+        </th>
+        <th class="py-3 ps-4 text-start total-td">TOTAL</th>
+        <th class="py-3 px-2 text-start balance-td border-end border-white">
+          BALANCE DUE
+        </th>
+        <th class="py-3 px-2 text-start action-td ps-4">ACTION</th>
+      </thead>
+      <tbody>
+        <tr class="border border-2">
+          <td class="py-4 text-start ps-3">
+            <div>#6364735467</div>
+            <span class="d-inline-block py-1 status-text rounded-2 text-info px-2"
+              >Partially Dispatched</span
+            >
+          </td>
+          <td class="py-4 text-start">
+            <span class="d-block fw-bold">Mary Smith</span>
+            <span class="text-truncate"
+              >124,Grandvioew Avenue , Grandale , California 94226 , USA</span
+            >
+          </td>
+          <td class="py-4 text-start">FTL</td>
+          <td class="py-4 ps-4 text-start">$1,276.34</td>
+          <td class="py-4 text-start">$0.00</td>
+          <td class="py-4 text-start ps-4">
+            <div class="d-flex gap-3">
+              <mat-icon class="text-info action-icon">edit_square</mat-icon>
+              <mat-icon class="text-info action-icon">file_copy</mat-icon>
+              <mat-icon class="text-danger action-icon">delete</mat-icon>
+            </div>
+          </td>
+        </tr>
+        <tr class="border border-1">
+          <td class="py-4 text-start ps-3">
+            <div>#6364735467</div>
+            <span class="d-inline-block py-1 text-success bg-success rounded-2 bg-opacity-10 px-2"
+              >Delivered</span
+            >
+          </td>
+          <td class="py-4 text-start">
+            <span class="d-block fw-bold">Mary Smith</span>
+            <span class="text-truncate"
+              >124,Grandvioew Avenue , Grandale , California 94226 , USA</span
+            >
+          </td>
+          <td class="py-4 text-start">FTL</td>
+          <td class="py-4 ps-4 text-start">$1,276.34</td>
+          <td class="py-4 text-start">$0.00</td>
+          <td class="py-4 text-start ps-4">
+            <div class="d-flex gap-3">
+              <mat-icon class="text-info action-icon">edit_square</mat-icon>
+              <mat-icon class="text-info action-icon">file_copy</mat-icon>
+              <mat-icon class="text-danger action-icon">delete</mat-icon>
+            </div>
+          </td>
+        </tr>
+        <tr class="border border-1">
+          <td class="py-4 text-start ps-3">
+            <div>#6364735467</div>
+            <span class="d-inline-block py-1 text-danger bg-danger rounded-2 bg-opacity-10 px-2"
+              >Cancelled</span
+            >
+          </td>
+          <td class="py-4 text-start">
+            <span class="d-block fw-bold">Mary Smith</span>
+            <span class="text-truncate"
+              >124,Grandvioew Avenue , Grandale , California 94226 , USA</span
+            >
+          </td>
+          <td class="py-4 text-start">FTL</td>
+          <td class="py-4 ps-4 text-start">$1,276.34</td>
+          <td class="py-4 text-start">$0.00</td>
+          <td class="py-4 text-start ps-4">
+            <div class="d-flex gap-3">
+              <mat-icon class="text-info action-icon">edit_square</mat-icon>
+              <mat-icon class="text-info action-icon">file_copy</mat-icon>
+              <mat-icon class="text-danger action-icon">delete</mat-icon>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>

@@ -10,7 +10,7 @@
         [placeholder]="'Search Products...'"
       ></app-admin-header>
       <div
-        class="bg-white mt-lg-4 mt-md-4 mt-sm-4 mt-0 mb-0 mx-lg-4 mx-md-4 mx-sm-4 mx-0 rounded-3 content-div d-flex flex-column "
+        class="bg-white mt-lg-4 mt-md-4 mt-sm-4 mt-0 mb-0 mx-lg-4 mx-md-4 mx-sm-4 mx-0 rounded-3 content-div d-flex flex-column"
       >
         <section class="h-100 flex-fill d-flex flex-column overflow-auto">
           <app-admin-subheader
@@ -26,9 +26,7 @@
                   <thead
                     class="border-bottom text-secondary bg-white table-header top-10 w-100"
                   >
-                  <th class="p-2 py-3">
-                    Product
-                  </th>
+                    <th class="p-2 py-3">Product</th>
                     <!-- <th class="p-2">
                       <div class="d-flex align-items-center gap-1 small-text">
                          Name <mat-icon>keyboard_arrow_down</mat-icon>
@@ -70,30 +68,33 @@
                       class="border-bottom"
                       *ngFor="let product of filteredProducts"
                     >
-                    <td class="p-2">
-                      <div class="d-flex align-items-center gap-3">
-                        <img
-                        class="product-img border rounded-2"
-                        src="{{ product.image }}"
-                        alt=""
-                        loading="lazy"
-                      />
-                      <span class="text-truncate product-name border-0 fw-bold">{{ product.name }}</span>
-                      </div>
-                    </td>
-                      <td class="py-3 ">{{ product.category }}</td>
+                      <td class="p-2">
+                        <div class="d-flex align-items-center gap-3">
+                          <img
+                            class="product-img border rounded-2"
+                            src="{{ product.image }}"
+                            alt=""
+                            loading="lazy"
+                          />
+                          <span
+                            class="text-truncate product-name border-0 fw-bold"
+                            >{{ product.name }}</span
+                          >
+                        </div>
+                      </td>
+                      <td class="py-3">{{ product.category }}</td>
                       <td class="py-3 fw-bold">${{ product.price }}</td>
                       <td class="py-3 fw-bold">{{ product.discount }}</td>
                       <td class="py-3">{{ product.stock }}</td>
                       <td>
                         <span
-                          class="border-2 btn-border text-success fw-bold px-2 py-1 rounded-4 "
+                          class="border-2 btn-border text-success fw-bold px-2 py-1 rounded-4"
                         >
                           {{ product.status }}
                         </span>
                       </td>
                       <!-- <td role="button" class="px-2 py-3 active">Details</td> -->
-                      <td role="button" class=" py-3">
+                      <td role="button" class="py-3">
                         <div class="d-flex align-items-center gap-2">
                           <span
                             class="text-danger"
@@ -111,6 +112,11 @@
                             matTooltip="Edit"
                             ><mat-icon>edit_square</mat-icon>
                           </span>
+                          <span (click)="infoDialog(product)" role="button">
+                            <mat-icon class="btn-text text-center"
+                              >info</mat-icon
+                            >
+                          </span>
                         </div>
                       </td>
                     </tr>
@@ -120,12 +126,12 @@
             </ng-container>
             <footer class=" ">
               <app-paginatorfooter
-              [itemlength]="productLength"
-              [size]="10"
-              [sizeOption]="pageSizeOptions"
-              [size]="pageSize"
-              (onChangeevent)="onPageChange($event)"
-            ></app-paginatorfooter>
+                [itemlength]="productLength"
+                [size]="10"
+                [sizeOption]="pageSizeOptions"
+                [size]="pageSize"
+                (onChangeevent)="onPageChange($event)"
+              ></app-paginatorfooter>
             </footer>
           </ng-container>
         </section>
@@ -141,10 +147,5 @@
   />
 </ng-template>
 <ng-template class="pt-4" #noFilteredData>
-  <!-- <img
-    class="bg-white loading-img"
-    src="https://cdn.dribbble.com/users/1767850/screenshots/3566945/media/dc6f1d5349d6d3bd0b520e1c16f236da.gif?resize=400x0"
-    alt=""
-  /> -->
   <h3 class="text-danger p-3">No Products Found!!</h3>
 </ng-template>

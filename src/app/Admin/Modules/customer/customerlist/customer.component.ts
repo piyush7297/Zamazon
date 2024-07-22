@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
 import { CustomerdetailComponent } from '../customerdetail/customerdetail.component';
+import { AddcustomerComponent } from '../addcustomer/addcustomer.component';
 
 @Component({
   selector: 'app-customer',
@@ -52,6 +53,13 @@ export class CustomerComponent implements OnInit {
   }
   infoDialog() {
     const dialogRef = this.dialog.open(CustomerdetailComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  addCustomer() {
+    const dialogRef = this.dialog.open(AddcustomerComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

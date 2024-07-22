@@ -6,6 +6,7 @@ import { AddproductComponent } from './addproduct/addproduct.component';
 import { UpdateproductComponent } from './updateproduct/updateproduct.component'
 import { SharedModule } from '../../Shared/Module/admin-shared/admin-shared.module';
 import { FileUploadModule } from 'ng2-file-upload';
+import { ProductdetailComponent } from './productdetail/productdetail.component';
 
 
 
@@ -14,6 +15,7 @@ import { FileUploadModule } from 'ng2-file-upload';
     AddproductComponent,
     UpdateproductComponent,
     ProductlistComponent,
+    ProductdetailComponent,
   ],
   imports: [
     CommonModule,
